@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endministrator | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Local Vendor Stylesheets -->
+    <link rel="stylesheet" href="js/vendor/lenis.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Local Vendor Scripts (GSAP & ScrollTrigger in head as required by animations) -->
+    <script src="js/vendor/gsap.min.js"></script>
+    <script src="js/vendor/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- HUD SHUTTERS (Access Lock Transition) -->
+    <div id="hud-shutters" class="hud-shutters-container">
+        <div class="shutter-panel shutter-top">
+            <div class="shutter-edge-line"></div>
+            <div class="shutter-tech-details">
+                <span>SEC_LOCK // OVERRIDE</span>
+                <span class="yellow-tag">STATUS: LOCKED</span>
+            </div>
+        </div>
+
+        <div class="shutter-loader">
+            <span class="loader-code">// SYSTEM_ACCESS_PROTOCOL</span>
+            <div class="loader-title">[ LOADING_MODULE: PROJECTS ]</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="shutter-panel shutter-bottom">
+            <div class="shutter-edge-line"></div>
+            <div class="shutter-tech-details">
+                <span>SYS_MEM: 0x88F2A</span>
+                <span>READY</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HUD RETICLE CURSOR -->
+    <div id="hud-cursor" class="hud-cursor">
+        <div class="reticle"></div>
+        <div class="coords">X:000 Y:000</div>
+    </div>
+
+    <!-- TOP NAVIGATION -->
+    <header class="navbar">
+        <a href="#hero" class="nav-logo">Endministrator</a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+            <span class="toggle-text">[ MENU // NAV ]</span>
+        </button>
+
+        <div class="nav-content" id="nav-content">
+            <nav class="nav-group nav-left">
+                <a href="#hero">Home</a>
+                <a href="#sobre-mi">About</a>
+                <a href="#proyectos">Projects</a>
+                <a href="#resume">Resume</a>
+            </nav>
+
+            <nav class="nav-group nav-right">
+                <a href="https://github.com/Rhaast45" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/michael-ortinero-a59b30427/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- TACTICAL FIXED BACKGROUND & HUD VECTORS -->
+        <div class="tactical-bg">
+            <div class="bg-dots-grid"></div>
+
+            <svg class="hud-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="dot-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.15)" />
+                    </pattern>
+                </defs>
+
+                <g class="hud-vectors" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" fill="none">
+                    <line x1="50%" y1="10%" x2="50%" y2="90%" stroke-dasharray="4 8" />
+                    <line x1="5%" y1="50%" x2="95%" y2="50%" stroke-dasharray="4 8" />
+                    <circle cx="50%" cy="50%" r="220" stroke-dasharray="2 12" />
+                    <circle cx="50%" cy="50%" r="380" stroke-dasharray="1 20" />
+
+                    <path d="M 20% 25% L 20% 27% M 19% 26% L 21% 26%" stroke-width="2" />
+                    <path d="M 80% 25% L 80% 27% M 79% 26% L 81% 26%" stroke-width="2" />
+                    <path d="M 20% 75% L 20% 77% M 19% 76% L 21% 76%" stroke-width="2" />
+                    <path d="M 80% 75% L 80% 77% M 79% 76% L 81% 76%" stroke-width="2" />
+                </g>
+
+                <g class="hud-corners" stroke="rgba(245, 166, 35, 0.3)" stroke-width="1.5" fill="none">
+                    <path d="M 30,60 L 30,30 L 60,30" />
+                    <path d="M 30, calc(100% - 60) L 30, calc(100% - 30) L 60, calc(100% - 30)" />
+                    <path d="M calc(100% - 60),30 L calc(100% - 30),30 L calc(100% - 30),60" />
+                    <path d="M calc(100% - 60), calc(100% - 30) L calc(100% - 30), calc(100% - 30) L calc(100% - 30), calc(100% - 60)" />
+                </g>
+            </svg>
+
+            <div class="geo-shape geo-bar-top-right"></div>
+            <div class="geo-shape geo-box-mid-left"></div>
+
+            <div class="hud-callout callout-top-center">
+                <span>[ TERMINAL_07 // SECURE_LINK_ESTABLISHED ]</span>
+                <div class="callout-bar"></div>
+            </div>
+
+            <div class="hud-callout callout-mid-right">
+                <span>UNIT_STATUS // ACTIVE</span>
+                <span>SYS_VER // 2.6.0</span>
+                <span>SYS.LOC // 14.5000Â° N â€¢ RHODES_ISLAND</span>
+            </div>
+
+            <div class="hud-callout callout-bottom-left">
+                <span class="yellow-tag">OPERATOR // RHAAST</span>
+                <span class="dim-text">SYSTEM_READY // 0x4F8</span>
+            </div>
+
+            <div class="hud-callout callout-bottom-center">
+                <span>â–² CAUTION // HIGH DENSITY HUD DATA â–²</span>
+            </div>
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div id="cyber-core"></div>
+            <div id="tactical-flashlight"></div>
+
+            <div class="hero-content">
+                <div class="hero-operator-badge">
+                    <span>REF 2023046 // OPERATOR ACCESS</span>
+                </div>
+
+                <div class="hero-title-wrapper">
+                    <div class="marquee-bg" aria-hidden="true">
+                        <div class="marquee-track">
+                            <span>IT GRADUATE &bull; DEVELOPER &bull; PROBLEM SOLVER &bull; ENDMINSTRATOR &bull; IT GRADUATE &bull; DEVELOPER &bull; PROBLEM SOLVER &bull;&nbsp;</span>
+                            <span>IT GRADUATE &bull; DEVELOPER &bull; PROBLEM SOLVER &bull; ENDMINSTRATOR &bull; IT GRADUATE &bull; DEVELOPER &bull; PROBLEM SOLVER &bull;&nbsp;</span>
+                        </div>
+                    </div>
+                    <h1 class="hero-title" id="glitch-title">
+                        <span class="char" data-char="O">O</span>
+                        <span class="char" data-char="R">R</span>
+                        <span class="char" data-char="T">T</span>
+                        <span class="char" data-char="I">I</span>
+                        <span class="char" data-char="N">N</span>
+                        <span class="char" data-char="E">E</span>
+                        <span class="char" data-char="R">R</span>
+                        <span class="char" data-char="O">O</span>
+                    </h1>
+                </div>
+
+                <p class="hero-tagline">RHODES ISLAND</p>
+
+                <blockquote class="hero-quote-box">
+                    <p class="hero-quote-text">"Greatness, on the other hand, requires the liberty and the drive to make the most of yourself."</p>
+                    <span class="hero-quote-author">• Charlie Kirk</span>
+                </blockquote>
+
+                <div class="hero-footer-info">
+                    <div class="system-status-box hero-availability-badge">
+                        <span class="status-indicator online"></span>
+                        <span class="status-text">CURRENTLY ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CINEMATIC TRANSITION FX: HERO -> ABOUT -->
+        <div class="transition-fx" aria-hidden="true">
+            <div class="breach-flash"></div>
+            <div class="scan-line"></div>
+        </div>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="sobre-mi" class="about-section">
+            <div class="tactical-card">
+                <div class="card-glow"></div>
+
+                <div class="corner-crosshair top-left">+</div>
+                <div class="corner-crosshair top-right">+</div>
+                <div class="corner-crosshair bottom-left">+</div>
+                <div class="corner-crosshair bottom-right">+</div>
+
+                <div class="card-header">
+                    <span class="card-sys-id">[ PERSONNEL_FILE // ID 2023046 ]</span>
+                    <span class="card-title-tag">MICHAEL ORTINERO // SYS_PROFILE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-body-layout">
+                        <!-- Left Column: Biography & Technical Overview -->
+                        <div class="card-text-col">
+                            <span class="sub-label">DEVELOPER_PROFILE // WHY INFORMATION TECHNOLOGY?</span>
+                            <h2 class="card-main-title">ABOUT ME</h2>
+                            
+                            <p class="card-bio">
+                                I first became interested in Information Technology at a young age because we ran a computer shop, which is where I became computer literate and started troubleshooting computers. Spending so much time around systems, I became deeply fascinated by how video games worked under the hood and how hardware and software interacted. Having used technologies since I was in grade school, I built a strong foundation of knowledge early on.
+                            </p>
+                            <p class="card-bio" style="margin-top: 1rem;">
+                                As I grew older and began working on more hands-on technical projects, that pivotal thought "I want to do this professionally" crossed my mind and solidified my career path. Because technology surrounds us and shapes how we live and work every day, I could see the massive impact I could make as an IT professional.
+                            </p>
+                            <p class="card-bio" style="margin-top: 1rem;">
+                                I pursued my Bachelor of Science in Information Technology at Datamex College of Saint Adeline, where I am expanding my skills in programming, hardware, and modern tech solutions. I am very excited about learning more throughout my journey and building a successful career in the tech industry.
+                            </p>
+
+                            <div class="tech-spec-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">DEGREE</span>
+                                    <span class="spec-value">B.S. in Information Technology</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">INSTITUTION</span>
+                                    <span class="spec-value">Datamex College of Saint Adeline</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">FOCUS_AREAS</span>
+                                    <span class="spec-value">Software Dev, Systems Support, Networking</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">STATUS</span>
+                                    <span class="spec-value">IT Graduate </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Operator Portrait Frame -->
+                        <div class="card-profile-col">
+                            <div class="profile-frame">
+                                <div class="profile-frame-corner pf-tl"></div>
+                                <div class="profile-frame-corner pf-tr"></div>
+                                <div class="profile-frame-corner pf-bl"></div>
+                                <div class="profile-frame-corner pf-br"></div>
+                                <div class="profile-scanlines" aria-hidden="true"></div>
+                                <div class="profile-laser" aria-hidden="true"></div>
+                                <img
+                                    src="assets/images/operator-portrait.png"
+                                    alt="Michael Ortinero — Operator Portrait"
+                                    class="profile-photo profile-photo-default"
+                                    draggable="false"
+                                />
+                                <img
+                                    src="assets/images/profile-real.png"
+                                    alt="Michael Ortinero — BS-IT Culminating Certificate"
+                                    class="profile-photo profile-photo-hover"
+                                    draggable="false"
+                                />
+                                <div class="profile-hud-label">
+                                    <span class="profile-status-dot"></span>
+                                    <span>OPERATIVE // ORTINERO.M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="footer-status"><span class="status-dot"></span> SYSTEM_ACTIVE</span>
+                    <span class="footer-code">END_FILE // 0x00_READY</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS SECTION -->
+        <section id="skills" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_01 — TECHNICAL SKILLS</span>
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+                <p class="section-subtitle">A growing, well-rounded toolkit. Eight core areas developed through coursework, personal practice, and project delivery.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/546b4.gif" alt="Hardware deployment illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 01</span>
+                    <h3 class="skill-card-title">Hardware Deployment</h3>
+                    <p class="skill-card-desc">Physical setup, cabling, component installation, diagnostic routines.</p>
+                </article>
+
+                <!-- Skill 2 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/8064b.gif" alt="Network configuration illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 02</span>
+                    <h3 class="skill-card-title">Network Configuration</h3>
+                    <p class="skill-card-desc">TCP/IP, routing, network diagnostics, infrastructure connectivity.</p>
+                </article>
+
+                <!-- Skill 3 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/45b81.gif" alt="Operating systems illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 03</span>
+                    <h3 class="skill-card-title">Operating Systems</h3>
+                    <p class="skill-card-desc">Windows, Linux, file systems, process management, command line utilities.</p>
+                </article>
+
+                <!-- Skill 4 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/eeb29.png" alt="Frontend development illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 04</span>
+                    <h3 class="skill-card-title">Frontend Development</h3>
+                    <p class="skill-card-desc">HTML, CSS, JavaScript, React, responsive modern web design.</p>
+                </article>
+
+                <!-- Skill 5 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/56513.png" alt="Programming illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 05</span>
+                    <h3 class="skill-card-title">Programming</h3>
+                    <p class="skill-card-desc">Python, Java, C# core fundamentals and algorithmic logic.</p>
+                </article>
+
+                <!-- Skill 6 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/78c22.png" alt="Tools and workflow illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 06</span>
+                    <h3 class="skill-card-title">Tools &amp; Workflow</h3>
+                    <p class="skill-card-desc">Git, GitHub, VS Code, Cursor, Agile delivery workflows.</p>
+                </article>
+
+                <!-- Skill 7 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/8d54e.gif" alt="IT Support illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 07</span>
+                    <h3 class="skill-card-title">IT Support</h3>
+                    <p class="skill-card-desc">Troubleshooting, hardware/software setup, helpdesk ticketing.</p>
+                </article>
+
+                <!-- Skill 8 -->
+                <article class="skill-tactical-card">
+                    <div class="skill-card-corner"></div>
+                    <div class="skill-img-wrap">
+                        <img src="assets/images/profile/91b45.png" alt="Backend and API development illustration" loading="lazy">
+                    </div>
+                    <span class="skill-card-badge">SYS_MODULE // 08</span>
+                    <h3 class="skill-card-title">Backend &amp; API Development</h3>
+                    <p class="skill-card-desc">Node.js, PHP, RESTful APIs, backend data integration.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="proyectos" class="projects-section">
+            <div class="projects-container">
+                <div class="section-header-hud">
+                    <span class="hud-tag">// LOG_FILE_02 — OPERATIONS</span>
+                    <h2 class="section-title">FEATURED PROJECTS</h2>
+                    <p class="section-subtitle">Practical systems, games, clear interfaces, and desktop utilities.</p>
+                    <div class="hud-header-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 01 -->
+                    <article class="project-card">
+                        <div class="project-img-container">
+                            <img src="assets/images/project-peak.png" alt="Peak.co project screenshot" class="project-img">
+                            <div class="project-img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-badge">SYS_01 // E-COMMERCE</div>
+                            <h3 class="project-title">Peak.co</h3>
+                            <p class="project-desc">Premium headwear forged in the streets, inspired by 90s hiphop. Built for creators, DJs, and dancers who refuse to settle.</p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>NODE.JS</span>
+                                <span>MYSQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 02 -->
+                    <article class="project-card">
+                        <div class="project-img-container">
+                            <img src="assets/images/project-chronicles.png" alt="Chronicles of an endless war game screenshot" class="project-img">
+                            <div class="project-img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-badge">SYS_02 // GAME DEV</div>
+                            <h3 class="project-title">Chronicles of war</h3>
+                            <p class="project-desc">Flash-era inspired base defense strategy game featuring defensive mechanics, unit deployments, and wave tactics.</p>
+                            <div class="project-tech">
+                                <span>UNITY</span>
+                                <span>FLOWLAB</span>
+                                <span>GITHUB</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+                    <!-- Project 03: Smart File Organizer -->
+                    <article class="project-card">
+                        <div class="project-img-container">
+                            <img src="assets/images/Sortly.png" alt="Smart File Organizer project preview" class="project-img">
+                            <div class="project-img-overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-badge">SYS_03 // SOFTWARE UTILITY</div>
+                            <h3 class="project-title">Smart File Organizer</h3>
+                            <p class="project-desc">A native Windows desktop file organizer. Automatically sorts messy files in selected directories with customizable filtering rules.</p>
+                            <div class="project-tech">
+                                <span>PYTHON</span>
+                                <span>POWERSHELL</span>
+                                <span>HTML</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Rhaast45/Smart-File-Organizer" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_CODE // GITHUB ]</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_03 — CREDENTIALS</span>
+                <h2 class="section-title">CERTIFICATES</h2>
+                <p class="section-subtitle">Continued learning and verified coursework supporting technical foundation.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="certs-grid">
+                <!-- Cert 1 -->
+                <article class="cert-tactical-card">
+                    <div class="cert-img-wrap">
+                        <img src="assets/images/profile/eb9b7.png" alt="IT Infrastructure and Cloud Computing certificate" loading="lazy">
+                    </div>
+                    <span class="cert-meta">CREDENTIAL // CERT_01</span>
+                    <h3 class="cert-title">IT Infrastructure and Cloud Computing</h3>
+                </article>
+
+                <!-- Cert 2 -->
+                <article class="cert-tactical-card">
+                    <div class="cert-img-wrap">
+                        <img src="assets/images/profile/dd2bf.png" alt="Next Gen Arduino certificate" loading="lazy">
+                    </div>
+                    <span class="cert-meta">CREDENTIAL // CERT_02</span>
+                    <h3 class="cert-title">Next Gen Arduino</h3>
+                </article>
+
+                <!-- Cert 3 -->
+                <article class="cert-tactical-card">
+                    <div class="cert-img-wrap">
+                        <img src="assets/images/profile/a5f1d.png" alt="Digital Office Mastery certificate" loading="lazy">
+                    </div>
+                    <span class="cert-meta">CREDENTIAL // CERT_03</span>
+                    <h3 class="cert-title">Digital Office Mastery</h3>
+                </article>
+
+                <!-- Cert 4 -->
+                <article class="cert-tactical-card">
+                    <div class="cert-img-wrap">
+                        <img src="assets/images/profile/4a08f.png" alt="Software Quality certificate" loading="lazy">
+                    </div>
+                    <span class="cert-meta">CREDENTIAL // CERT_04</span>
+                    <h3 class="cert-title">Software Quality</h3>
+                </article>
+
+                <!-- Cert 5 -->
+                <article class="cert-tactical-card">
+                    <div class="cert-img-wrap">
+                        <img src="assets/images/profile/f6c4c.png" alt="Arduino 101 certificate" loading="lazy">
+                    </div>
+                    <span class="cert-meta">CREDENTIAL // CERT_05</span>
+                    <h3 class="cert-title">Arduino 101</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- RESUME SECTION -->
+        <section id="resume" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_04 — DOCUMENTATION</span>
+                <h2 class="section-title">RESUME</h2>
+                <p class="section-subtitle">Compact document view of background, coursework, and technical profile.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="resume-hud-container">
+                <div class="resume-card">
+                    <div class="resume-toolbar">
+                        <div class="resume-toolbar__identity">
+                            <div class="resume-toolbar__pdf-icon">
+                                <img src="assets/images/profile/pdf-icon.png" alt="PDF Icon">
+                            </div>
+                            <div class="resume-toolbar__meta">
+                                <span class="resume-toolbar__filename">Michael_Ortinero_Resume.pdf</span>
+                                <span class="resume-toolbar__info">1 Page â€¢ Updated October 2026 â€¢ Verified PDF</span>
+                            </div>
+                        </div>
+
+                        <a href="assets/documents/Michael_Ortinero_Resume.pdf" download="Michael_Ortinero_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-download-btn">
+                            <span>â–¼ DOWNLOAD RESUME</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVAILABILITY & FAQ SECTION -->
+        <section id="faq" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_05 — PROTOCOLS</span>
+                <h2 class="section-title">AVAILABILITY &amp; FAQ</h2>
+                <p class="section-subtitle">Common questions regarding collaboration, project scopes, and delivery timelines.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Are you open to freelance work?</summary>
+                    <p>Yes. I'm booking projects starting next month, from landing pages to full web applications and system tooling.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How much does a project cost?</summary>
+                    <p>Most projects are a fixed price agreed after a short discovery call. Small sites and utility scripts start around ₱1,500.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What's your usual timeline?</summary>
+                    <p>A typical portfolio or marketing site takes two to four weeks, depending on content availability and technical requirements.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- TACTICAL SIDEBAR -->
+        <aside class="tactical-sidebar left-sidebar">
+            <div class="power-bar-container">
+                <span class="sidebar-label">PWR_SYS</span>
+                <div class="power-bar">
+                    <div class="power-fill"></div>
+                </div>
+                <span class="power-percentage">98%</span>
+            </div>
+
+            <div class="tactical-divider"></div>
+
+            <div class="vertical-text-group">
+                <span class="vertical-text">SYS.LOC // RHODES_ISLAND</span>
+                <span class="vertical-text dim">// OPERATOR_RHAAST_v2.6</span>
+            </div>
+
+            <div class="status-dots-grid">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </aside>
+
+        <!-- CONTACT TRIGGER BUTTON -->
+        <button id="contact-trigger" class="availability-badge-bottom" aria-label="Open Contact Modal">
+            <span class="badge-corner"></span>
+            <span class="badge-text">[CONTRACT // OPEN FOR HIRE]</span>
+        </button>
+
+        <!-- CONTACT MODAL -->
+        <div id="contact-modal" class="contact-modal">
+            <div class="contact-modal-overlay" id="contact-modal-overlay"></div>
+
+            <div class="contact-card">
+                <button class="contact-close" id="contact-close" aria-label="Close Contact Modal">&times;</button>
+
+                <div class="contact-header">
+                    <span class="contact-tag">COMMUNICATIONS_SYS // DIRECT_LINK</span>
+                    <h2 class="contact-title">CONTACT</h2>
+                </div>
+
+                <div class="contact-body">
+                    <p class="contact-desc">
+                        Have a project in mind, an inquiry, or looking to collaborate? Send a direct transmission.
+                    </p>
+
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span class="item-label">EMAIL</span>
+                            <a href="mailto:qwertyrhaast@gmail.com" class="item-value">qwertyrhaast@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="item-label">LOCATION</span>
+                            <span class="item-value">ParaÃ±aque City, Metro Manila</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="item-label">NETWORK NODES</span>
+                            <span class="item-value">GitHub / LinkedIn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-footer">
+                    <span class="status-indicator"></span>
+                    <span class="footer-code">END_NODE // 0x4F8_READY</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATAMATRIX HUD BLOCK -->
+        <div class="datamatrix-corner-block">
+            <div class="barcode-lines">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span class="serial-code">RHAAST-2026 // OPERATOR_SPEC</span>
+            <span class="sub-status">STATUS: ONLINE</span>
+        </div>
+    </main>
+
+    <!-- HORIZONTAL PINNED EXPERIENCE TIMELINE -->
+    <section id="experiencia" class="experience-section">
+        <div class="exp-header-hud">
+            <div class="hud-tag">[ SYS_LOG // CAREER_TRACK ]</div>
+            <h2 class="exp-title">EXPERIENCE</h2>
+            <div class="exp-sublabel">// OPERATIONAL HISTORY &amp; EDUCATION</div>
+        </div>
+
+        <div class="exp-pin-wrapper">
+            <div class="exp-track">
+                <!-- Education Card -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-date">2023 - 2027</span>
+                        <span class="exp-status-badge">[ ACADEMIC ]</span>
+                    </div>
+                    <h3 class="exp-role">B.S. in Information Technology</h3>
+                    <div class="exp-company">@ Datamex College of Saint Adeline</div>
+                    <p class="exp-desc">
+                        Specialized training in programming fundamentals, hardware maintenance, network setup, systems troubleshooting, and modern tech solutions in ParaÃ±aque City.
+                    </p>
+                    <div class="exp-tags">
+                        <span class="tech-tag">Information Technology</span>
+                        <span class="tech-tag">Systems</span>
+                        <span class="tech-tag">Programming</span>
+                        <span class="tech-tag">Networking</span>
+                    </div>
+                </div>
+
+                <!-- Work Experience Card -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-date">2024 - Current</span>
+                        <span class="exp-status-badge">[ ACTIVE_ROLE ]</span>
+                    </div>
+                    <h3 class="exp-role">Systems &amp; Equipment Maintenance</h3>
+                    <div class="exp-company">@ Talent lyft</div>
+                    <p class="exp-desc">
+                        Hands-on technical maintenance, hardware setup, system diagnostics, software deployments, and infrastructure support ensuring continuous uptime.
+                    </p>
+                    <div class="exp-tags">
+                        <span class="tech-tag">Maintenance</span>
+                        <span class="tech-tag">Hardware Support</span>
+                        <span class="tech-tag">Troubleshooting</span>
+                        <span class="tech-tag">IT Operations</span>
+                    </div>
+                </div>
+
+                                <!-- Verified Clients Card -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-date">20##</span>
+                        <span class="exp-status-badge">[ VERIFIED_CLIENTS ]</span>
+                    </div>
+                    <h3 class="exp-role">Client Engagements</h3>
+                    <div class="exp-company">@ Independent IT Support &amp; Consulting</div>
+                    <p class="exp-desc">
+                        Provided direct computer systems troubleshooting, OS configuration, hardware deployment, and technical maintenance services for individual clients:
+                    </p>
+                    <div class="exp-client-list">
+                        <div class="exp-client-item"><span class="exp-client-bullet">&gt;</span> Rudolf Eric Mateo</div>
+                        <div class="exp-client-item"><span class="exp-client-bullet">&gt;</span> John Earl Campos</div>
+                        <div class="exp-client-item"><span class="exp-client-bullet">&gt;</span> Randy Villanueva</div>
+                    </div>
+                    <div class="exp-tags" style="margin-top: 1rem;">
+                        <span class="tech-tag">IT Support</span>
+                        <span class="tech-tag">Diagnostics</span>
+                        <span class="tech-tag">Client Services</span>
+                    </div>
+                </div>
+
+                <!-- End Card -->
+                <div class="exp-card exp-card-end">
+                    <div class="exp-end-content">
+                        <div class="exp-end-icon">⚡</div>
+                        <h3>END OF RECORDS</h3>
+                        <p>Available for technical roles, freelance development, and high-impact IT projects.</p>
+                        <div class="hud-status">[ READY_FOR_DISPATCH ]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TACTICAL FOOTER -->
+    <footer id="tactical-footer" class="tactical-footer">
+        <div class="glitch-overlay" id="footer-glitch-overlay"></div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">MICHAEL ORTINERO</span>
+                    <p class="footer-tagline">// IT GRADUATE &bull; DEVELOPER &bull; PROBLEM SOLVER</p>
+                </div>
+
+                <button id="btn-reboot" class="btn-reboot-top">
+                    <span class="reboot-icon">▲</span>
+                    <span class="reboot-text">[ REBOOT_SYSTEM // TOP ]</span>
+                </button>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>[ CONTACT // COMM_LINK ]</h4>
+                    <ul>
+                        <li><a href="mailto:qwertyrhaast@gmail.com" class="footer-link">qwertyrhaast@gmail.com</a></li>
+                        <li><span class="footer-link">📍 ParaÃ±aque City, Metro Manila</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>[ NETWORKS // NODES ]</h4>
+                    <ul>
+                        <li><a href="https://github.com/Rhaast45" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/michael-ortinero-a59b30427/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>[ SYSTEM_STATUS ]</h4>
+                    <div class="system-status-box">
+                        <div class="status-indicator online"></div>
+                        <span>SYSTEM_ONLINE // ALL_NODES_OK</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2027 Michael Ortinero. All rights reserved.</span>
+                <span class="footer-credit">
+                    Design based on <a href="https://github.com/francoN753/Arknights-template-portafolio" target="_blank" rel="noopener noreferrer">Arknights Template</a> by francoN753
+                </span>
+                <span class="footer-version">OPERATOR_RHAAST v2.6.0 // TERMINAL_IDLE</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local Vendor Scripts -->
+    <script src="js/vendor/lenis.min.js"></script>
+    <script src="js/vendor/three.min.js"></script>
+
+    <!-- Template Interaction Scripts -->
+    <script src="js/experiencie.js"></script>
+    <script src="js/spotlight.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/glitch.js"></script>
+    <script src="js/hud-cursor.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/cyber-core.js"></script>
+    <script src="js/parallax.js"></script>
+
+    <!-- Mobile Nav Toggle Controller -->
+    <script>
+    (function () {
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+        const toggleText = navToggle ? navToggle.querySelector('.toggle-text') : null;
+
+        if (navToggle && navContent) {
+            navToggle.addEventListener('click', () => {
+                navContent.classList.toggle('is-open');
+                const isOpen = navContent.classList.contains('is-open');
+                if (toggleText) {
+                    toggleText.textContent = isOpen ? '[ X // CLOSE ]' : '[ MENU // NAV ]';
+                }
+            });
+
+            navContent.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navContent.classList.remove('is-open');
+                    if (toggleText) toggleText.textContent = '[ MENU // NAV ]';
+                });
+            });
+        }
+    })();
+    </script>
+
+    <!-- Scroll & Extended Interactive Behaviors -->
+    <script src="js/scroll.js"></script>
+    <script src="js/about-card-interaccion.js"></script>
+    <script src="js/portal-animation.js"></script>
+</body>
+
+</html>
+
+
+
+
