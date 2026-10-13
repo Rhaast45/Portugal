@@ -15,7 +15,7 @@ This project presents a dark, minimal portfolio experience with a strong tech ae
 ## Project Structure
 
 ```text
-it-portfolioV2/
+it-portfolioV3/
 ├── index.html           # Main landing page
 ├── profile.html         # Profile/about page
 ├── projects.html        # Projects showcase page
