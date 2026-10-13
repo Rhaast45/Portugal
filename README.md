@@ -19,9 +19,13 @@ it-portfolioV2/
 ├── index.html           # Main landing page
 ├── profile.html         # Profile/about page
 ├── projects.html        # Projects showcase page
+├── resume.html          # Resume landing page
 ├── assets/
 │   ├── images/
 │   └── documents/
+├── Js/                  # JavaScript files
+├── css/
+    └── style.css        # Designs
 ├── README.md            # Project documentation
 └── .vscode/             # Editor settings
 ```
@@ -36,8 +40,7 @@ it-portfolioV2/
 
 Click this link directly or type it in a browser:
 
-[https://rhaast45.github.io/Port-Santiago]
-
+[https://rhaast45.github.io/Portugal/]
 
 
 ## Notes
@@ -48,4 +51,5 @@ Click this link directly or type it in a browser:
 
 ## Author
 
-Operator Rhaast (Michael B "GOAT" Ortinero)
+Endminstrator764 
+FORMULA_FN
