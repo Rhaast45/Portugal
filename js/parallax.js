@@ -1,4 +1,4 @@
-﻿function initTacticalParallax() {
+function initTacticalParallax() {
   // Captura de las capas en base al HTML
   const bgLayer = document.querySelector('.tactical-bg');        // Fondo (Grid / Vectores HUD)
   const midLayer = document.querySelector('.marquee-bg');        // Midground (Texto "CREATIVE CODER")
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Timeline Principal Hero -> Sobre Mí
     const breachTl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#home",
+            trigger: document.getElementById("home") ? "#home" : "#hero",
             start: "top top",
             end: "bottom top",
             scrub: 0.5
@@ -188,3 +188,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (cardFooter) breachTl.to(cardFooter, { opacity: 1, y: 0, duration: 0.15 }, 0.8);
 });
+
