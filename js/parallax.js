@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Timeline Principal Hero -> Sobre Mí
     const breachTl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#hero",
+            trigger: "#home",
             start: "top top",
             end: "bottom top",
             scrub: 0.5
