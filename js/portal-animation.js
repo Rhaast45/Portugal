@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-        console.error("GSAP o ScrollTrigger no están cargados correctamente.");
+        console.error("GSAP o ScrollTrigger no estÃ¡n cargados correctamente.");
         return;
     }
 
@@ -10,17 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const shutterBottom = document.querySelector(".shutter-bottom");
     const shutterLoader = document.querySelector(".shutter-loader");
     const loaderBar = document.querySelector(".loader-bar-fill");
-    const projectsSection = document.querySelector("#proyectos");
-    const projectCards = document.querySelectorAll("#proyectos .project-card");
-    const sectionHeader = document.querySelector("#proyectos .section-header-hud");
+    const projectsSection = document.querySelector("#projects");
+    const projectCards = document.querySelectorAll("#projects .project-card");
+    const sectionHeader = document.querySelector("#projects .section-header-hud");
 
     if (!projectsSection || !shutterTop || !shutterBottom) return;
 
-    // Timeline cinemática de persianas tácticas (Cierre anticipado al aproximarse)
+    // Timeline cinemÃ¡tica de persianas tÃ¡cticas (Cierre anticipado al aproximarse)
     const shutterTl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#proyectos",
-            start: "top 85%",      // Cierre inmediato en cuanto la sección asoma por abajo (evita vacíos)
+            trigger: "#projects",
+            start: "top 85%",      // Cierre inmediato en cuanto la secciÃ³n asoma por abajo (evita vacÃ­os)
             end: "top 15%",        // Finaliza el ciclo de apertura antes de llegar al centro
             scrub: 0.6,            // Scrub muy fluido y receptivo con Lenis
             onLeaveBack: () => {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 3. Llenado de la barra de carga (0.5 ? 1.2)
         .to(loaderBar, { width: "100%", duration: 0.7, ease: "power1.inOut" }, 0.5)
 
-        // 4. Confirmación de carga y resplandor (1.2 ? 1.4)
+        // 4. ConfirmaciÃ³n de carga y resplandor (1.2 ? 1.4)
         .to(shutterLoader, { scale: 1.04, boxShadow: "0 0 35px rgba(245, 166, 35, 0.5)", duration: 0.2 }, 1.2)
 
         // 5. Ocultar el loader (1.4 ? 1.6)
