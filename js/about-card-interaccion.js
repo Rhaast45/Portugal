@@ -1,7 +1,7 @@
-﻿// js/about-card-interaction.js — Interacción 3D Tilt de la tarjeta
+// js/about-card-interaction.js — Interacción 3D Tilt de la tarjeta
 
 document.addEventListener('DOMContentLoaded', () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById('about') || document.getElementById('sobre-mi');
     const tacticalCard = aboutSection.querySelector('.tactical-card');
 
     if (!aboutSection || !tacticalCard) return;
@@ -63,3 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
