@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Aplicar transformaciones con GSAP para máxima suavidad
         gsap.to(tacticalCard, {
             x: moveX,
-            y: moveY,
+            
             rotationX: rotateX,
             rotationY: rotateY,
             duration: settings.smoothness,
             ease: "power2.out",
-            overwrite: true // Evita que se acumulen animaciones
+            overwrite: auto // Evita que se acumulen animaciones
         });
     });
 
