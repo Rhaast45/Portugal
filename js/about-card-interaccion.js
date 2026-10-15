@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rotationY: rotateY,
             duration: settings.smoothness,
             ease: "power2.out",
-            overwrite: auto // Evita que se acumulen animaciones
+            overwrite: True // Evita que se acumulen animaciones
         });
     });
 
