@@ -2,9 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.getElementById('about') || document.getElementById('sobre-mi');
+    if (!aboutSection) return;
     const tacticalCard = aboutSection.querySelector('.tactical-card');
-
-    if (!aboutSection || !tacticalCard) return;
+    if (!tacticalCard) return;
 
     // Configuración del efecto (más bajo = más sutil)
     const settings = {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         smoothness: 0.5   // Tiempo de suavizado de GSAP (segundos)
     };
 
-    aboutSection.addEventListener('mousemove', (e) => {
+    aboutSection.addEventListener('pointermove', (e) => {
         // 1. Obtener dimensiones y centro de la sección/tarjeta
         const { clientX, clientY } = e;
         const rect = aboutSection.getBoundingClientRect();
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Resetear la tarjeta a su posición original al quitar el mouse
-    aboutSection.addEventListener('mouseleave', () => {
+    const resetTilt = () => {
         gsap.to(tacticalCard, {
             x: 0,
             y: 0,
@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.8,
             ease: "elastic.out(1, 0.5)" // Efecto elástico al volver
         });
-    });
-});
+    };
 
+    aboutSection.addEventListener('pointerleave', resetTilt);
+    aboutSection.addEventListener('pointercancel', resetTilt);
+});
