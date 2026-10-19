@@ -11,6 +11,7 @@
     
     <!-- Local Vendor Stylesheets -->
     <link rel="stylesheet" href="js/vendor/lenis.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- Local Vendor Scripts (GSAP & ScrollTrigger in head as required by animations) -->
@@ -55,7 +56,7 @@
 
     <!-- TOP NAVIGATION -->
     <header class="navbar">
-        <a href="#hero" class="nav-logo">Endministrator</a>
+        <a href="#hero" class="nav-logo">Endfield</a>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
             <span class="toggle-text">[ MENU // NAV ]</span>
@@ -65,8 +66,12 @@
             <nav class="nav-group nav-left">
                 <a href="#hero">Home</a>
                 <a href="#about">About</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#resume">Resume</a>
+                <a href="#problem-solving">Problem-Solving</a>
+                <a href="#employability">Employability</a>
+                <a href="#contact-modal" id="nav-contact-link">Contact</a>
             </nav>
 
             <nav class="nav-group nav-right">
@@ -119,7 +124,7 @@
             <div class="hud-callout callout-mid-right">
                 <span>UNIT_STATUS // ACTIVE</span>
                 <span>SYS_VER // 2.6.0</span>
-                <span>SYS.LOC // 14.5000Â° N â€¢ RHODES_ISLAND</span>
+                <span>SYS.LOC // 14.5000° N - RHODES_ISLAND</span>
             </div>
 
             <div class="hud-callout callout-bottom-left">
@@ -150,14 +155,20 @@
                         </div>
                     </div>
                     <h1 class="hero-title" id="glitch-title">
-                        <span class="char" data-char="O">O</span>
-                        <span class="char" data-char="R">R</span>
-                        <span class="char" data-char="T">T</span>
+                        <span class="char" data-char="E">E</span>
+                        <span class="char" data-char="N">N</span>
+                        <span class="char" data-char="D">D</span>
+                        <span class="char" data-char="M">M</span>
                         <span class="char" data-char="I">I</span>
                         <span class="char" data-char="N">N</span>
-                        <span class="char" data-char="E">E</span>
+                        <span class="char" data-char="I">I</span>
+                        <span class="char" data-char="S">S</span>
+                        <span class="char" data-char="T">T</span>
                         <span class="char" data-char="R">R</span>
+                        <span class="char" data-char="A">A</span>
+                        <span class="char" data-char="T">T</span>
                         <span class="char" data-char="O">O</span>
+                        <span class="char" data-char="R">R</span>
                     </h1>
                 </div>
 
@@ -173,6 +184,16 @@
                         <span class="status-indicator online"></span>
                         <span class="status-text">CURRENTLY ACTIVE</span>
                     </div>
+                </div>
+
+                <!-- Hero CTA Buttons -->
+                <div class="hero-cta-group">
+                    <a href="#projects" class="hero-cta-btn hero-cta-primary">
+                        <span>VIEW MY PROJECTS</span>
+                    </a>
+                    <a href="assets/documents/Michael_Ortinero_Resume.pdf" download="Michael_Ortinero_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hero-cta-btn hero-cta-secondary">
+                        <span>DOWNLOAD RESUME</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -214,6 +235,12 @@
                             <p class="card-bio" style="margin-top: 1rem;">
                                 I pursued my Bachelor of Science in Information Technology at Datamex College of Saint Adeline, where I am expanding my skills in programming, hardware, and modern tech solutions. I am very excited about learning more throughout my journey and building a successful career in the tech industry.
                             </p>
+
+                            <!-- Professional Statement -->
+                            <div class="professional-statement-box">
+                                <strong>// PROFESSIONAL_STATEMENT:</strong><br>
+                                "I am a BSIT graduate with skills in Network Troubleshooting, Hardware & Software Diagnostics, and Operating Systems Setup & Maintenance. I am interested in pursuing a career as a Tech support specialist."
+                            </div>
 
                             <div class="tech-spec-grid">
                                 <div class="spec-item">
@@ -370,6 +397,76 @@
                     <p class="skill-card-desc">Node.js, PHP, RESTful APIs, backend data integration.</p>
                 </article>
             </div>
+
+            <!-- Skills Inventory Table -->
+            <div class="hud-panel" style="margin-top: 2.5rem;">
+                <div class="hud-panel-title">
+                    <span class="hud-panel-badge">// INVENTORY_MATRIX</span>
+                    <span>SKILLS INVENTORY</span>
+                </div>
+                <p style="font-family: var(--font-body, sans-serif); font-size: 0.85rem; color: var(--text-muted, #A0AAA9); margin-bottom: 1rem;">
+                    An overview of my current technical skills and self-assessed proficiency levels.
+                </p>
+
+                <div class="hud-table-wrapper">
+                    <table class="hud-table" aria-label="Skills Inventory">
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th>Skill</th>
+                                <th>Proficiency Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Programming</span></td>
+                                <td>Python, Java, C# Core Fundamentals</td>
+                                <td><span class="edit-me-pill">Intermediate</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Web Development</span></td>
+                                <td>HTML5, CSS3, JavaScript, React, Responsive UI</td>
+                                <td><span class="edit-me-pill">Advanced</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Database</span></td>
+                                <td>MySQL, Relational Schema Design, Secure Queries</td>
+                                <td><span class="edit-me-pill">Beginner</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Tools &amp; DevOps</span></td>
+                                <td>Git, GitHub, GitHub Actions, VS Code, Cursor</td>
+                                <td><span class="edit-me-pill">Intermediate</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Networking</span></td>
+                                <td>TCP/IP, Routing, DNS Diagnostics, Cabling &amp; Subnetting</td>
+                                <td><span class="edit-me-pill">Advanced</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Cybersecurity</span></td>
+                                <td>Prepared Statements, SQL Injection Defense, Least Privilege</td>
+                                <td><span class="edit-me-pill">Beginner</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Data &amp; Systems</span></td>
+                                <td>Windows, Linux (CLI), File Systems, Process Management</td>
+                                <td><span class="edit-me-pill">Intermediate</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">Cloud</span></td>
+                                <td>IT Infrastructure &amp; Cloud Fundamentals</td>
+                                <td><span class="edit-me-pill">Intermediate</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="table-tag table-tag-accent">AI Literacy</span></td>
+                                <td>Prompt Engineering, Output Verification, AI-Assisted Debugging</td>
+                                <td><span class="edit-me-pill">Advanced</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
         <!-- FEATURED PROJECTS SECTION -->
@@ -390,16 +487,17 @@
                             <div class="project-img-overlay"></div>
                         </div>
                         <div class="project-content">
-                            <div class="project-badge">SYS_01 // E-COMMERCE</div>
-                            <h3 class="project-title">Peak.co</h3>
-                            <p class="project-desc">Premium headwear forged in the streets, inspired by 90s hiphop. Built for creators, DJs, and dancers who refuse to settle.</p>
+                            <div class="project-badge">SYS_01 // ACCOUNTING</div>
+                            <h3 class="project-title">AccessPoint</h3>
+                            <p class="project-desc">Streamline your front desk, track real-time activity, and deliver a secure, seamless check-in experience for every visitor.</p>
                             <div class="project-tech">
                                 <span>PHP</span>
                                 <span>NODE.JS</span>
                                 <span>MYSQL</span>
                             </div>
                             <div class="project-actions">
-                                <a href="#" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                                <a href="https://camposjohnearl-byte.github.io/AccessPoint-VISITOR-MANAGEMENT/#" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                                <a href="https://github.com/camposjohnearl-byte/AccessPoint-VISITOR-MANAGEMENT" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_CODE // GITHUB ]</a>
                             </div>
                         </div>
                     </article>
@@ -407,20 +505,21 @@
                     <!-- Project 02 -->
                     <article class="project-card">
                         <div class="project-img-container">
-                            <img src="assets/images/project-chronicles.png" alt="Chronicles of an endless war game screenshot" class="project-img">
+                            <img src="assets/images/project-chronicles.png" alt="mini database picture" class="project-img">
                             <div class="project-img-overlay"></div>
                         </div>
                         <div class="project-content">
-                            <div class="project-badge">SYS_02 // GAME DEV</div>
-                            <h3 class="project-title">Chronicles of war</h3>
-                            <p class="project-desc">Flash-era inspired base defense strategy game featuring defensive mechanics, unit deployments, and wave tactics.</p>
+                            <div class="project-badge">SYS_02 // DATABASE</div>
+                            <h3 class="project-title">Mini inventory</h3>
+                            <p class="project-desc">A small full-stack project demonstrating database design, PHP CRUD operations, secure queries, and a responsive interface.</p>
                             <div class="project-tech">
-                                <span>UNITY</span>
-                                <span>FLOWLAB</span>
-                                <span>GITHUB</span>
+                                <span>PHP</span>
+                                <span>MYSQL</span>
+                                <span>HTML</span>
                             </div>
                             <div class="project-actions">
-                                <a href="#" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                                <a href="https://miniinventory.infinityfree.io/" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_PROJECT // ARCHIVE ]</a>
+                                <a href="https://github.com/LexusDev69/DATABASE-Inventory" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_CODE // GITHUB ]</a>
                             </div>
                         </div>
                     </article>
@@ -443,7 +542,9 @@
                                 <span>HTML</span>
                             </div>
                             <div class="project-actions">
+                                <a href="https://mega.nz/file/iAVzBIQJ#JVckngmvrXPCcEJhcYlhOdnXSXLdRMM-3EmMBumA6rw" target="_blank" rel="noopener noreferrer" class="btn-github">[ DOWNLOAD // MEGA ]</a>
                                 <a href="https://github.com/Rhaast45/Smart-File-Organizer" target="_blank" rel="noopener noreferrer" class="btn-github">[ VIEW_CODE // GITHUB ]</a>
+
                             </div>
                         </div>
                     </article>
@@ -526,7 +627,7 @@
                             </div>
                             <div class="resume-toolbar__meta">
                                 <span class="resume-toolbar__filename">Michael_Ortinero_Resume.pdf</span>
-                                <span class="resume-toolbar__info">1 Page â€¢ Updated October 2026 â€¢ Verified PDF</span>
+                                <span class="resume-toolbar__info">1 Page - Updated October 2026 - Verified PDF</span>
                             </div>
                         </div>
 
@@ -538,10 +639,763 @@
             </div>
         </section>
 
+        <!-- ===============================================================
+             1. PROBLEM-SOLVING: TROUBLESHOOTING PORTFOLIO
+             =============================================================== -->
+        <section id="problem-solving" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_05 — DIAGNOSTIC &amp; TROUBLESHOOTING</span>
+                <h2 class="section-title">TROUBLESHOOTING PORTFOLIO</h2>
+                <p class="section-subtitle">Scenario-based diagnostic protocols and resolution workflows for common IT, hardware, network, and system failures.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="hud-accordion-group">
+                <!-- Case 1: Wi-Fi Connectivity -->
+                <details class="hud-case-card" open>
+                    <summary>CASE 01 // Computer Cannot Connect to Wi-Fi Network</summary>
+                    <div class="hud-case-content">
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Problem Description</span>
+                            <div class="hud-case-field-val">Workstation fails to associate with the wireless access point or displays "No Internet, Secured" / "Unable to connect to this network" while other devices operate normally.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Possible Causes</span>
+                            <div class="hud-case-field-val">
+                                <ul>
+                                    <li>Wireless NIC / adapter disabled in Network Connections or Device Manager</li>
+                                    <li>Corrupted, outdated, or generic wireless NIC device driver</li>
+                                    <li>Incorrect static IP configuration or stale DHCP lease collision</li>
+                                    <li>Router / Access Point MAC address filtering, band steering, or DHCP pool exhaustion</li>
+                                    <li>DNS resolver failure or unreachable upstream DNS servers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Diagnostic Procedure</span>
+                            <div class="hud-case-field-val">
+                                <ol>
+                                    <li>Verify physical/software Wi-Fi switch and check <code>ncpa.cpl</code> to confirm wireless adapter is enabled.</li>
+                                    <li>Execute <code>ipconfig /all</code> in CLI to inspect IPv4 configuration, default gateway, and DHCP status.</li>
+                                    <li>Execute loopback ping (<code>ping 127.0.0.1</code>) to confirm TCP/IP stack integrity.</li>
+                                    <li>Execute gateway ping (e.g. <code>ping 192.168.1.1</code>) and external IP ping (<code>ping 8.8.8.8</code>) to isolate internal vs external layer connectivity.</li>
+                                    <li>Test name resolution using <code>nslookup google.com</code> to verify DNS operation.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Applied Solution</span>
+                            <div class="hud-case-field-val">Reset TCP/IP stack and Winsock catalog via <code>netsh int ip reset</code> and <code>netsh winsock reset</code>. Flushed DNS resolver cache via <code>ipconfig /flushdns</code> and renewed lease via <code>ipconfig /renew</code>. Configured fallback reliable DNS (1.1.1.1 / 8.8.8.8) and updated wireless driver from vendor package. Verified full connectivity restoration.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Lesson Learned</span>
+                            <div class="hud-case-field-val">Always follow the OSI model bottom-up (Physical &rarr; Data Link &rarr; Network &rarr; Transport). Isolating IP connectivity from DNS name resolution saves substantial diagnostic time in field support.</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Case 2: No POST / Boot Failure -->
+                <details class="hud-case-card">
+                    <summary>CASE 02 // Workstation Fails to POST / Black Screen on Power-Up</summary>
+                    <div class="hud-case-content">
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Problem Description</span>
+                            <div class="hud-case-field-val">The workstation powers on, but shows no display and does not complete POST. Fans or lights may turn on, but there is no operating-system startup.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Possible Causes</span>
+                            <div class="hud-case-field-val">
+                                <ul>
+                                    <li>Loose or faulty memory module, graphics card, or power connector</li>
+                                    <li>Display, cable, or monitor input issue mistaken for a POST failure</li>
+                                    <li>Incorrect or unstable firmware settings</li>
+                                    <li>Faulty power supply, motherboard, CPU, or other component</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Diagnostic Procedure</span>
+                            <div class="hud-case-field-val">
+                                <ol>
+                                    <li>Confirm the monitor is powered on, set to the correct input, and connected to the active graphics output; test with a known-good cable or display if available.</li>
+                                    <li>Power the workstation off, unplug it, and follow ESD precautions before checking internal components.</li>
+                                    <li>Inspect motherboard POST LEDs or beep codes and reseat accessible power and display connections.</li>
+                                    <li>Boot with only essential hardware; test one memory module at a time in the motherboard-recommended slot.</li>
+                                    <li>If needed, reset firmware settings using the motherboard manufacturer's procedure. Test or replace a PSU only with appropriate equipment or qualified assistance; never open the PSU.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Resolution Approach</span>
+                            <div class="hud-case-field-val">Use POST indicators and a minimal-hardware boot to isolate the failing component. Reseat or substitute only the component identified by testing, restore firmware defaults when appropriate, then reconnect devices one at a time and verify a normal POST.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Lesson Learned</span>
+                            <div class="hud-case-field-val">Separate display-path problems from POST failures first. Change one variable at a time, follow component safety guidance, and avoid replacing parts based on symptoms alone.</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Case 3: Severe System Sluggishness -->
+                <details class="hud-case-card">
+                    <summary>CASE 03 // Chronic System Slowdown &amp; 100% Disk Utilization</summary>
+                    <div class="hud-case-content">
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Problem Description</span>
+                            <div class="hud-case-field-val">A Windows workstation responds slowly or freezes while Task Manager reports sustained 100% disk active time, even when reported read/write throughput is low.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Possible Causes</span>
+                            <div class="hud-case-field-val">
+                                <ul>
+                                    <li>Storage device health problems, connection faults, or a saturated drive</li>
+                                    <li>Background updates, indexing, synchronization, or another process producing sustained I/O</li>
+                                    <li>Insufficient memory causing heavy paging</li>
+                                    <li>System-file issues or unwanted software consuming resources</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Diagnostic Procedure</span>
+                            <div class="hud-case-field-val">
+                                <ol>
+                                    <li>Use Task Manager and Resource Monitor (<code>resmon</code>) to identify processes with sustained disk activity.</li>
+                                    <li>Check storage-device health with the manufacturer's diagnostic utility or available SMART monitoring.</li>
+                                    <li>Back up important files before running repair scans or extended tests, especially if the drive may be failing.</li>
+                                    <li>Review Windows Update and system logs, check memory pressure, and run a Microsoft Defender scan as appropriate.</li>
+                                    <li>If storage health is good, use Windows servicing tools such as <code>DISM</code> and <code>sfc /scannow</code> when system-file corruption is suspected.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Resolution Approach</span>
+                            <div class="hud-case-field-val">Address the cause identified by monitoring rather than disabling services at random. If diagnostics indicate a failing drive, prioritize a verified backup and replace the drive; avoid stressing a failing disk with intensive scans. If the drive is healthy, resolve the identified background workload or system issue and recheck performance.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Lesson Learned</span>
+                            <div class="hud-case-field-val">100% active time is a symptom, not a diagnosis. Check drive health and protect user data before running disk-intensive repair or benchmark tools.</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Case 4: Network Printer Undetected -->
+                <details class="hud-case-card">
+                    <summary>CASE 04 // Network Office Printer Not Detected on Subnet</summary>
+                    <div class="hud-case-content">
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Problem Description</span>
+                            <div class="hud-case-field-val">Workstations cannot discover or print to a shared network printer after a subnet change. The printer may be offline to clients, or jobs may remain queued.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Possible Causes</span>
+                            <div class="hud-case-field-val">
+                                <ul>
+                                    <li>The printer's address or subnet settings changed, or clients use a stale address</li>
+                                    <li>Clients and printer are on different VLANs without the required routing or access rules</li>
+                                    <li>The Windows Print Spooler is stopped, or the queue or driver has a problem</li>
+                                    <li>Discovery is unavailable across the subnet, or a firewall rule blocks the configured print protocol</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Diagnostic Procedure</span>
+                            <div class="hud-case-field-val">
+                                <ol>
+                                    <li>Confirm the printer's current IP address, subnet mask, gateway, and link status from its network menu or configuration page.</li>
+                                    <li>Check the client's network configuration and test reachability; note that a failed ping alone does not prove the printer is offline.</li>
+                                    <li>If available, open the printer's embedded web page and confirm its network status.</li>
+                                    <li>Check the Print Spooler service and queue, then verify the printer port and installed manufacturer driver.</li>
+                                    <li>Ask the network administrator to verify VLAN routing and narrowly scoped firewall rules for the configured print protocol.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Resolution Approach</span>
+                            <div class="hud-case-field-val">Once the network path is confirmed, assign the printer a stable address through an approved DHCP reservation or network plan, update the client port to the current address, and use the supported vendor driver. Clear only the affected stale jobs and validate printing from a test workstation.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Lesson Learned</span>
+                            <div class="hud-case-field-val">Separate name discovery, IP connectivity, and print-queue issues. Use an address managed by the network team and allow only the print services the environment actually needs.</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Case 5: Corrupted Windows User Profile -->
+                <details class="hud-case-card">
+                    <summary>CASE 05 // Corrupted Windows User Profile ("Signed in with a Temporary Profile")</summary>
+                    <div class="hud-case-content">
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Problem Description</span>
+                            <div class="hud-case-field-val">Windows displays a temporary-profile warning at sign-in. The user's normal desktop, settings, and files may not appear in the current session and changes made there may not persist after sign-out.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Possible Causes</span>
+                            <div class="hud-case-field-val">
+                                <ul>
+                                    <li>A profile hive or user-profile service error prevents the usual profile from loading</li>
+                                    <li>Insufficient disk space, file-system problems, or permissions prevent access to the profile directory</li>
+                                    <li>A pending update, security product, or other process interferes with profile loading</li>
+                                    <li>A mismatched or damaged profile mapping requires further investigation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Diagnostic Procedure</span>
+                            <div class="hud-case-field-val">
+                                <ol>
+                                    <li>Do not save important work in the temporary session; notify the user and arrange a safe backup of existing profile data.</li>
+                                    <li>Check Event Viewer &rarr; Windows Logs &rarr; Application for User Profile Service errors around the sign-in time.</li>
+                                    <li>Confirm the original profile directory exists, has expected data, and the system drive has sufficient free space.</li>
+                                    <li>Check Windows updates, disk health, and relevant service or security-product errors before changing profile settings.</li>
+                                    <li>Only if necessary, have an administrator back up the registry and verify the exact user SID and profile path before making any ProfileList changes.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Resolution Approach</span>
+                            <div class="hud-case-field-val">After safeguarding the user's data and identifying the cause, follow the supported repair path for the specific profile error. If the original profile cannot be repaired safely, create a fresh profile and migrate the user's files and required settings from a verified backup. Avoid deleting or renaming registry keys without confirming the SID-to-profile mapping.</div>
+                        </div>
+                        <div class="hud-case-field">
+                            <span class="hud-case-field-label">Lesson Learned</span>
+                            <div class="hud-case-field-val">Treat the warning as a data-protection issue first. Preserve the original profile, avoid storing work in the temporary session, and back up registry data before any advanced repair.</div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             2. CYBERSECURITY: SQL INJECTION VULNERABILITY CASE STUDY
+             =============================================================== -->
+        <section id="cybersecurity" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_06 — CYBERSECURITY CASE STUDY</span>
+                <h2 class="section-title">DEFENSIVE SECURITY AUDIT</h2>
+                <p class="section-subtitle">Deep dive technical analysis: SQL Injection vulnerability mechanics, threat vectors, enterprise impact, and proactive software mitigation.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="hud-panel">
+                <div class="hud-panel-title">
+                    <span class="hud-panel-badge">// THREAT_ANALYSIS</span>
+                    <span>UNDERSTANDING SQL INJECTION (SQLi) VULNERABILITIES</span>
+                </div>
+                <div style="font-family: var(--font-body, sans-serif); font-size: 0.9rem; line-height: 1.7; color: var(--text-light, #F4F5F5);">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>What it is:</strong> SQL Injection (SQLi) is an injection attack where malicious SQL statements are inserted into entry fields (e.g., input forms, HTTP headers, query string parameters) for execution by the database backend. It remains consistently in the OWASP Top 10 vulnerabilities category.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>How it happens:</strong> SQLi occurs when an application concatenates untrusted user input directly into dynamic database query strings instead of parsing code and data separately. This enables the attacker to manipulate the query logic, bypass authentication, and execute arbitrary commands.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Potential Risks &amp; Impact:</strong> Unauthorized authentication bypass, full loss of confidentiality (exposure of sensitive records, hashed passwords, PII), database data tampering or deletion, administrative takeover, and lateral escalation to underlying server OS commands.
+                    </p>
+                </div>
+
+                <!-- Code Comparison: Vulnerable vs Secure -->
+                <div class="code-compare-grid">
+                    <!-- Vulnerable Box -->
+                    <div class="code-box code-box-vulnerable">
+                        <div class="code-box-header">
+                            <span>âŒ VULNERABLE CODE (Direct Concatenation)</span>
+                            <span class="edit-me-pill" style="color: #ff4d4f; border-color: #ff4d4f;">CWE-89</span>
+                        </div>
+                        <pre><span class="code-comment">// User inputs received from HTTP POST</span>
+$username = $_POST['user'];
+$password = $_POST['pass'];
+
+<span class="code-comment">// Flaw: Input is directly concatenated into SQL</span>
+<span class="code-highlight-vuln">$sql = "SELECT id, role FROM users 
+        WHERE username = '$username' 
+        AND password = '$password'";</span>
+
+<span class="code-comment">// Attack payload: user = ' OR '1'='1' --
+// Results in unconditional TRUE statement,
+// bypassing authentication without valid credentials!</span>
+$result = $conn-&gt;query($sql);</pre>
+                    </div>
+
+                    <!-- Secure Box -->
+                    <div class="code-box code-box-secure">
+                        <div class="code-box-header">
+                            <span>âœ… SECURE CODE (Prepared Statements &amp; PDO)</span>
+                            <span class="edit-me-pill" style="color: #52c41a; border-color: #52c41a;">DEFENSIVE BEST PRACTICE</span>
+                        </div>
+                        <pre><span class="code-comment">// User inputs received from HTTP POST</span>
+$username = $_POST['user'];
+$password = $_POST['pass'];
+
+<span class="code-comment">// 1. Parameterized Query with Placeholders</span>
+<span class="code-highlight-sec">$stmt = $pdo-&gt;prepare(
+    "SELECT id, password_hash, role 
+     FROM users WHERE username = :user LIMIT 1"
+);</span>
+
+<span class="code-comment">// 2. Bind values explicitly: data never executes as SQL!</span>
+$stmt-&gt;execute([':user' =&gt; $username]);
+$user = $stmt-&gt;fetch();
+
+<span class="code-comment">// 3. Secure password verification using salted bcrypt hash</span>
+if ($user &amp;&amp; password_verify($password, $user['password_hash'])) {
+    <span class="code-comment">// Session token granted securely</span>
+}</pre>
+                    </div>
+                </div>
+
+                <!-- Preventive Security Controls -->
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="font-family: var(--font-heading, sans-serif); font-size: 1rem; color: var(--accent-yellow, #f5a623); margin-bottom: 0.8rem; letter-spacing: 1px;">
+                        // DEFENSIVE MITIGATION STRATEGIES &amp; ARCHITECTURAL CONTROLS
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+                        <div style="padding: 1rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                            <strong style="color: #fff; font-family: var(--font-heading, sans-serif); font-size: 0.85rem;">1. PREPARED STATEMENTS (PDO / Parameterization)</strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted, #A0AAA9); margin-top: 0.35rem; line-height: 1.5;">Separates query parsing from data execution at the database engine level, rendering malicious SQL strings inert.</p>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                            <strong style="color: #fff; font-family: var(--font-heading, sans-serif); font-size: 0.85rem;">2. INPUT VALIDATION &amp; WHITELISTS</strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted, #A0AAA9); margin-top: 0.35rem; line-height: 1.5;">Validates data types, lengths, and formats strictly against expected formats before queries process.</p>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                            <strong style="color: #fff; font-family: var(--font-heading, sans-serif); font-size: 0.85rem;">3. PRINCIPLE OF LEAST PRIVILEGE</strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted, #A0AAA9); margin-top: 0.35rem; line-height: 1.5;">Application DB accounts must only possess specific SELECT, INSERT, UPDATE grants; strictly deny DROP, ALTER, and administrative roles.</p>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                            <strong style="color: #fff; font-family: var(--font-heading, sans-serif); font-size: 0.85rem;">4. MODERN ORM &amp; WEB APPLICATION FIREWALL (WAF)</strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted, #A0AAA9); margin-top: 0.35rem; line-height: 1.5;">Deploy ORMs with built-in parameterization and back with Cloudflare/ModSecurity WAF inspection to filter malicious query payloads at edge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             3. AI LITERACY: USAGE LOG & ETHICAL VERIFICATION
+             =============================================================== -->
+        <section id="ai-literacy" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_07 — ARTIFICIAL INTELLIGENCE LITERACY</span>
+                <h2 class="section-title">AI USAGE LOG &amp; VERIFICATION</h2>
+                <p class="section-subtitle">A transparent record of AI assistance used while editing this portfolio, including what was checked and what still needs confirmation.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="hud-panel">
+                <div class="hud-panel-title">
+                    <span class="hud-panel-badge">// AUDIT_LOG</span>
+                    <span>AI-ASSISTED PORTFOLIO WORK LOG</span>
+                </div>
+
+                <div class="hud-table-wrapper">
+                    <table class="hud-table" aria-label="AI Tooling and Verification Audit Log">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">Date</th>
+                                <th style="width: 30%;">Task &amp; Context</th>
+                                <th style="width: 25%;">AI Assistance</th>
+                                <th style="width: 30%;">Verification &amp; Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>2026-10-19</strong></td>
+                                <td>Log File 05 troubleshooting cases: replacing placeholder content with scenario-based diagnostic and resolution guidance.</td>
+                                <td>AI drafted possible causes, diagnostic steps, and resolution approaches for cases 2–5.</td>
+                                <td>Reviewed for safe troubleshooting guidance and avoided presenting proposed resolutions as completed repairs. These are example scenarios, not evidence of actual case work.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2026-10-19</strong></td>
+                                <td>Projects section loading transition: extend the shutter and loader timeline.</td>
+                                <td>AI adjusted GSAP timing for the progress bar, loader, shutters, and project reveal.</td>
+                                <td>JavaScript syntax and <code>git diff --check</code> passed. The updated scroll animation was not visually tested in a live browser.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2026-10-19</strong></td>
+                                <td>Log File 08 interview cards: add the supplied interview recording and silent looping animation.</td>
+                                <td>AI updated the HTML to embed the media and set the animation to autoplay muted and loop.</td>
+                                <td>Confirmed the media files and player attributes are present. Local <code>file://</code> preview did not load media metadata, so playback still needs confirmation on the hosted site.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2026-10-19</strong></td>
+                                <td>Log File 01 skills inventory: remove the mandatory evidence requirement.</td>
+                                <td>AI revised the inventory heading, description, and table to show skills and proficiency levels without evidence references.</td>
+                                <td>Checked that the evidence requirement was removed from Log File 01 and ran <code>git diff --check</code>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Four Answer Blocks on AI Literacy -->
+                <div class="ai-answer-grid">
+                    <div class="ai-answer-card">
+                        <span class="hud-tag" style="font-size: 0.65rem;">PILLAR 01</span>
+                        <h4 class="ai-answer-title">What did AI help me accomplish?</h4>
+                        <p class="ai-answer-body">
+                            AI helped draft and revise portfolio content and code, including troubleshooting guidance, HTML, CSS, and animation timing. Its suggestions were starting points, not proof of real-world experience or completed repairs.
+                        </p>
+                    </div>
+
+                    <div class="ai-answer-card">
+                        <span class="hud-tag" style="font-size: 0.65rem;">PILLAR 02</span>
+                        <h4 class="ai-answer-title">What did I personally verify?</h4>
+                        <p class="ai-answer-body">
+                            Checks varied by task. JavaScript syntax and whitespace checks passed for the Projects animation edit; the media player markup and asset paths were inspected. Media playback and the updated scroll animation still need confirmation in a hosted browser.
+                        </p>
+                    </div>
+
+                    <div class="ai-answer-card">
+                        <span class="hud-tag" style="font-size: 0.65rem;">PILLAR 03</span>
+                        <h4 class="ai-answer-title">What did I learn from the process?</h4>
+                        <p class="ai-answer-body">
+                            AI output needs review against the task and the actual environment. Technical guidance should be checked before use, and proposed scenario resolutions should not be presented as work personally performed.
+                        </p>
+                    </div>
+
+                    <div class="ai-answer-card">
+                        <span class="hud-tag" style="font-size: 0.65rem;">PILLAR 04</span>
+                        <h4 class="ai-answer-title">What limitations &amp; errors did I find?</h4>
+                        <p class="ai-answer-body">
+                            AI can make unsupported assumptions, overstate verification, or produce steps that do not fit a specific environment. A successful syntax check does not prove runtime behavior, and local file previews may not verify hosted media playback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             4. EMPLOYABILITY: INTERVIEWS & PROJECT DEFENSE
+             =============================================================== -->
+        <section id="employability" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_08 — EMPLOYABILITY &amp; DEFENSE READINESS</span>
+                <h2 class="section-title">EMPLOYABILITY &amp; INTERVIEW READINESS</h2>
+                <p class="section-subtitle">Evaluation frameworks, capstone project defense outline with strict timings, and technical interview simulations.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <!-- Employability Cards -->
+            <div class="employability-grid">
+                <!-- Mock Interview Card -->
+                <div class="employability-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <span class="hud-tag" style="margin: 0;">EVALUATION // 01</span>
+                        <span class="status-badge status-badge-completed">[ RECORDED ]</span>
+                    </div>
+                    <h3 style="font-family: var(--font-display, sans-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Behavioral Mock Interview Recording</h3>
+                    <p style="font-family: var(--font-body, sans-serif); font-size: 0.85rem; color: var(--text-muted, #A0AAA9); line-height: 1.6; margin-bottom: 1rem;">
+                        Recorded interview simulation presenting communication, workplace problem-solving, teamwork, and professional readiness for IT support and junior systems operations roles.
+                    </p>
+                    <video class="mock-interview-video" controls playsinline preload="metadata" aria-label="Behavioral mock interview video">
+                        <source src="assets/videos/mock-interview.mp4" type="video/mp4">
+                        Your browser does not support MP4 video playback.
+                    </video>
+                    <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; color: var(--accent-yellow, #f5a623); font-family: var(--font-heading, sans-serif);">
+                        VIDEO EVIDENCE: IT Support &amp; Junior Systems Operations
+                    </div>
+                </div>
+
+                <!-- Technical Interview Card -->
+                <div class="employability-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <span class="hud-tag" style="margin: 0;">EVALUATION // 02</span>
+                        <span class="status-badge status-badge-scheduled">[ SCHEDULED ]</span>
+                    </div>
+                    <h3 style="font-family: var(--font-display, sans-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Technical Interview Assessment</h3>
+                    <p style="font-family: var(--font-body, sans-serif); font-size: 0.85rem; color: var(--text-muted, #A0AAA9); line-height: 1.6; margin-bottom: 1rem;">
+                        Practical oral and whiteboard examination covering relational database queries, OSI network troubleshooting, script debugging, and security fundamentals.
+                    </p>
+                    <video class="interview-loop-video" autoplay muted loop playsinline preload="metadata" aria-label="Silent looping technical interview animation">
+                        <source src="assets/images/profile/transparent.webm" type="video/webm">
+                    </video>
+                    <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; color: var(--accent-yellow, #f5a623); font-family: var(--font-heading, sans-serif);">
+                        BENCHMARK: Core BSIT Knowledge Verification
+                    </div>
+                </div>
+
+                <!-- Project Defense Card -->
+                <div class="employability-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <span class="hud-tag" style="margin: 0;">EVALUATION // 03</span>
+                        <span class="status-badge status-badge-scheduled">[ SCHEDULED ]</span>
+                    </div>
+                    <h3 style="font-family: var(--font-display, sans-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Capstone Project Defense Outline</h3>
+                    <p style="font-family: var(--font-body, sans-serif); font-size: 0.85rem; color: var(--text-muted, #A0AAA9); margin-bottom: 0.5rem;">
+                        Strict panel presentation protocol designed for capstone delivery:
+                    </p>
+                    <div class="defense-timeline">
+                        <div class="defense-step"><span>1. Introduction &amp; Candidate Overview</span><span class="timing">1 - 2 mins</span></div>
+                        <div class="defense-step"><span>2. Problem Statement &amp; Context</span><span class="timing">2 mins</span></div>
+                        <div class="defense-step"><span>3. Project Objectives &amp; Scope</span><span class="timing">1 min</span></div>
+                        <div class="defense-step"><span>4. Proposed Technical Solution</span><span class="timing">2 mins</span></div>
+                        <div class="defense-step"><span>5. Tech Stack &amp; Architecture</span><span class="timing">2 mins</span></div>
+                        <div class="defense-step"><span>6. Live Software &amp; System Demonstration</span><span class="timing">5 - 10 mins</span></div>
+                        <div class="defense-step"><span>7. Database Schema &amp; Architectural Deep-Dive</span><span class="timing">3 mins</span></div>
+                        <div class="defense-step"><span>8. Technical Difficulties Encountered</span><span class="timing">2 mins</span></div>
+                        <div class="defense-step"><span>9. Implemented Solutions &amp; Workarounds</span><span class="timing">2 mins</span></div>
+                        <div class="defense-step"><span>10. Future Recommendations &amp; Scalability</span><span class="timing">1 min</span></div>
+                        <div class="defense-step" style="border-left-color: #52c41a;"><span>11. Defense Panel Q&amp;A Session</span><span class="timing" style="color: #52c41a;">Panel Led</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 Mock Interview Questions Accordion -->
+            <div class="hud-panel">
+                <div class="hud-panel-title">
+                    <span class="hud-panel-badge">// INTERVIEW_PREP</span>
+                    <span>12 CORE TECHNICAL &amp; BEHAVIORAL INTERVIEW QUESTIONS &amp; ANSWER OUTLINES</span>
+                </div>
+
+                <div class="hud-accordion-group">
+                    <details class="hud-case-card">
+                        <summary>Q01: Tell me about yourself and your background in IT.</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Introduce my BSIT foundation from Datamex College of Saint Adeline, roots in hands-on troubleshooting at our family computer shop, maintenance role at Talent lyft, and passionate interest in software, networking, and system reliability.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q02: What are your greatest technical strengths and key area for improvement?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Strengths: Hardware assembly, network connectivity diagnosis, and pragmatic frontend/backend scripting. Improvement: Expanding hands-on mastery in enterprise containerization (Docker) and advanced cloud orchestration.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q03: Describe a difficult technical problem you faced and how you solved it.</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> STAR method. Situation: Hardware POST failure / system crash during live testing. Task: Restore uptime under tight deadline. Action: Methodical isolation, RAM testing, registry correction. Result: Restored full operations without data loss.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q04: How do you prioritize tasks when multiple IT systems require urgent attention?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Utilize an impact vs. urgency matrix. Prioritize critical business operations, shared network resources, and data security over individual isolated non-blocking tickets.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q05: Explain how DNS works to a non-technical manager.</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> DNS is the Internet's phonebook. Humans recall domain names like google.com; computers only communicate via numerical IP addresses. DNS transparently converts names to IPs in milliseconds.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q06: How do you protect a web application from SQL injection attacks?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Exclusively implement parameterized queries (Prepared Statements via PDO), validate inputs with strict whitelisting, enforce database least privilege, and avoid string concatenation.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q07: Tell me about a time you had a disagreement with a team member and how you resolved it.</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> STAR method. Discussed architectural choices on project division; separated personal opinions from technical requirements by benchmarking performance and testing prototypes together.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q08: How do you stay updated with rapidly changing technology trends?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Engaging actively in developer communities, reviewing official documentation, tracking CVE vulnerability disclosures, and building independent proof-of-concept projects.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q09: What is your troubleshooting protocol when a user says "the internet is down"?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Verify scope (is it one device or all devices?). Check physical link &rarr; inspect IP address with <code>ipconfig</code> &rarr; ping gateway &rarr; ping external IP (8.8.8.8) &rarr; ping domain name to isolate DNS.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q10: Explain the difference between symmetric and asymmetric encryption.</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Symmetric uses one single shared key for encryption and decryption (fast, bulk data like AES). Asymmetric uses a public key to encrypt and a private key to decrypt (secure key exchange like RSA/ECC in HTTPS).
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q11: How do you use AI tools responsibly without becoming overly dependent on them?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Treat AI as a collaborative accelerator. Every line of suggested code and diagnostic step must be manually audited, cross-referenced with documentation, and tested before production use.
+                        </div>
+                    </details>
+
+                    <details class="hud-case-card">
+                        <summary>Q12: Where do you see yourself as an IT professional in the next 3 to 5 years?</summary>
+                        <div class="hud-case-content">
+                            <strong>Outline:</strong> Progressing from junior IT support / associate developer into a specialized Systems Operations or Solutions Engineer role, holding industry certs (CompTIA Security+, AWS Cloud), and mentoring incoming IT graduates.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             5. CAREER PLAN: ONE-PAGE IT CAREER DEVELOPMENT PLAN
+             =============================================================== -->
+        <section id="career-plan" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_09 — PROFESSIONAL ROADMAP</span>
+                <h2 class="section-title">IT CAREER DEVELOPMENT PLAN</h2>
+                <p class="section-subtitle">A strategic one-page career roadmap bridging academic training to industry deployment, certifications, and technical mastery.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="hud-panel">
+                <div class="hud-panel-title">
+                    <span class="hud-panel-badge">// CAREER_PROFILE</span>
+                    <span>CAREER TRAJECTORY MATRIX</span>
+                </div>
+
+                <div class="hud-table-wrapper">
+                    <table class="hud-table" aria-label="Career Development Plan Matrix">
+                        <tbody>
+                            <tr>
+                                <th style="width: 25%;">Target Position</th>
+                                <td style="width: 75%;"><strong style="color: var(--accent-yellow, #f5a623);">Junior IT Support Engineer / Associate Full-Stack Systems Developer</strong> </td>
+                            </tr>
+                            <tr>
+                                <th>Target IT Field</th>
+                                <td>IT Systems Support, Infrastructure Administration &amp; Web Systems Integration</td>
+                            </tr>
+                            <tr>
+                                <th>Current Core Skills</th>
+                                <td>Hardware Diagnostics &amp; Assembly, TCP/IP Networking, Windows/Linux OS, HTML/CSS/JavaScript/React, Python, PHP, MySQL, Git/GitHub</td>
+                            </tr>
+                            <tr>
+                                <th>Skills to Improve</th>
+                                <td>Automated PowerShell Scripting, Docker Containerization, CI/CD Pipelines, Advanced SQL Optimization</td>
+                            </tr>
+                            <tr>
+                                <th>Technologies to Learn</th>
+                                <td>Docker, Kubernetes, AWS Services (EC2, S3, RDS), Next.js / TypeScript, Linux Shell Automation (Bash)</td>
+                            </tr>
+                            <tr>
+                                <th>Certifications to Consider</th>
+                                <td>CompTIA Network+, CompTIA Security+, AWS Certified Cloud Practitioner / Solutions Architect Associate, Microsoft Certified: Azure Fundamentals</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Strategic Milestone Goals -->
+                <div class="career-goals-grid">
+                    <div class="career-goal-card">
+                        <div class="career-goal-milestone">MILESTONE // 06 MONTHS</div>
+                        <h3 class="career-goal-title">Industry Transition</h3>
+                        <p class="career-goal-desc">
+                            Secure an entry-level IT Support, Helpdesk, or Junior Web Developer role in Metro Manila. Complete CompTIA Network+ or AWS Cloud Practitioner certification and operationalize GitHub project repositories.
+                        </p>
+                    </div>
+
+                    <div class="career-goal-card">
+                        <div class="career-goal-milestone">MILESTONE // 01 YEAR</div>
+                        <h3 class="career-goal-title">Autonomous Operations</h3>
+                        <p class="career-goal-desc">
+                            Achieve full autonomy in diagnosing Tier-2 network and systems incidents. Lead deployment of internal tooling scripts and obtain CompTIA Security+ certification to strengthen defensive security posture.
+                        </p>
+                    </div>
+
+                    <div class="career-goal-card">
+                        <div class="career-goal-milestone">MILESTONE // 03 YEARS</div>
+                        <h3 class="career-goal-title">Systems &amp; Cloud Specialist</h3>
+                        <p class="career-goal-desc">
+                            Advance into a mid-level Systems Administrator, Cloud Support Specialist, or Software Solutions role. Design and maintain resilient cloud infrastructure while mentoring junior IT graduates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             6. REFLECTION: BSIT GRADUATION CAPSTONE REFLECTION PAPER
+             =============================================================== -->
+        <section id="reflection" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_10 — CAPSTONE REFLECTION</span>
+                <h2 class="section-title">FINAL ACADEMIC &amp; CAREER REFLECTION</h2>
+                <p class="section-subtitle">Comprehensive first-person reflection on my undergraduate journey, technical transformation, and industry readiness.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <article class="reflection-article">
+                <span class="reflection-word-count">VERIFIED WORD COUNT: ~680 WORDS // FIRST PERSON PERSPECTIVE</span>
+
+                <h3>What I Knew About IT Before BSIT</h3>
+                <p>
+                    My relationship with Information Technology began long before I stepped into a college classroom. Growing up around our family's computer shop, I gained early hands-on exposure to computer literacy and basic hardware troubleshooting. Back then, my perception of IT was deeply tied to curiosity about how video games functioned under the hood and how internal computer parts communicated. I knew how to swap parts, format hard drives, and troubleshoot basic Windows glitches, but I lacked formal understanding of software architecture, networking protocols, structured algorithms, and enterprise security.
+                </p>
+
+                <h3>The Most Important Things I Learned</h3>
+                <p>
+                    Pursuing my Bachelor of Science in Information Technology at Datamex College of Saint Adeline fundamentally transformed my technical horizon. I learned that technology is not merely about assembling computers or writing isolated scripts; it is about building reliable, maintainable, and secure systems that solve human and organizational problems. Among the most critical lessons was understanding the OSI networking model, relational database normalization, and defensive programming. I learned how data travels across subnets, how SQL queries interact with disk storage, and why security and input sanitization cannot be an afterthought.
+                </p>
+
+                <h3>Which Project Taught Me the Most</h3>
+                <p>
+                    The project that provided the steepest learning curve was Smart File Organizer. Building it forced me to integrate multiple disciplines simultaneously: software logic, file systems, user interface accessibility, and error handling. I learned firsthand that writing code that works on my personal machine is only ten percent of the challenge; ensuring that the program gracefully handles missing directories, invalid input types, and network dropouts is what separates student code from production software.
+                </p>
+
+                <h3>My Hardest Technical Difficulty</h3>
+                <p>
+                    My most demanding technical hurdle occurred when diagnosing complex database relationship errors. For days, standard solutions yielded false positives. I had to systematically peel back abstraction layers, read raw logs, run CLI diagnostic utilities, and verify every assumption from the bottom up. Overcoming that issue taught me patience, disciplined debugging, and the humility to consult official technical specifications rather than guessing.
+                </p>
+
+                <h3>How My Skills Changed &amp; Areas for Continued Growth</h3>
+                <p>
+                    My professional tenure in systems and equipment maintenance at Talent lyft, alongside independent client servicing, sharpened my ability to execute under pressure. I transitioned from a student who simply answered homework prompts into a professional who anticipates hardware downtime and verifies backup integrity. Nevertheless, I recognize areas where I must continue pushing forward: mastering containerization technologies like Docker, automating routine operations via advanced PowerShell, and architecting multi-region cloud infrastructures.
+                </p>
+
+                <h3>The Kind of IT Professional I Want to Be</h3>
+                <p>
+                    I aspire to be an IT professional recognized for uncompromised integrity, rigorous problem-solving, and continuous learning. I want to be the engineer who colleagues can depend on when mission-critical systems encounter severe faults, knowing that I will approach the incident calmly, methodically, and transparently. Technology is constantly changing, but ethical responsibility, reliable documentation, and dedication to user uptime remain timeless.
+                </p>
+
+                <h3>Why I Am Ready to Start My Career</h3>
+                <p>
+                    With my academic foundation from Datamex College of Saint Adeline, my practical maintenance experience at Talent lyft, my verified technical certifications, and the portfolio artifacts showcased throughout this site, I am fully equipped to contribute to an engineering or IT operations team from day one. I possess the liberty, drive, and foundational competency to make the most of every technical opportunity ahead.
+                </p>
+            </article>
+        </section>
+
+        <!-- ===============================================================
+             7. GITHUB: EVIDENCE REPOSITORY BANNER
+             =============================================================== -->
+        <section id="github" class="hud-section-container">
+            <div class="section-header-hud">
+                <span class="hud-tag">// LOG_FILE_11 — EVIDENCE REPOSITORY</span>
+                <h2 class="section-title">CODEBASE &amp; EVIDENCE REGISTRY</h2>
+                <p class="section-subtitle">Verified open-source repositories, commit logs, and professional engineering evidence.</p>
+                <div class="hud-header-line"></div>
+            </div>
+
+            <div class="evidence-banner">
+                <div class="evidence-content">
+                    <h3 class="evidence-title">OPERATOR RHAAST // GITHUB &amp; LINKEDIN NODES</h3>
+                    <p class="evidence-desc">
+                        All projects, automation utilities, diagnostic scripts, documentation files, and curriculum artifacts featured in this portfolio are maintained with transparent commit histories. Explore the source repositories and professional credentials directly through the linked networks.
+                    </p>
+                </div>
+
+                <div class="evidence-actions">
+                    <a href="https://github.com/Rhaast45" target="_blank" rel="noopener noreferrer" class="hero-cta-btn hero-cta-primary">
+                        <span>VIEW GITHUB REPOSITORY</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/michael-ortinero-a59b30427/" target="_blank" rel="noopener noreferrer" class="hero-cta-btn hero-cta-secondary">
+                        <span>CONNECT ON LINKEDIN</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
         <!-- AVAILABILITY & FAQ SECTION -->
         <section id="faq" class="hud-section-container">
             <div class="section-header-hud">
-                <span class="hud-tag">// LOG_FILE_05 — PROTOCOLS</span>
+                <span class="hud-tag">// LOG_FILE_12 — PROTOCOLS</span>
                 <h2 class="section-title">AVAILABILITY &amp; FAQ</h2>
                 <p class="section-subtitle">Common questions regarding collaboration, project scopes, and delivery timelines.</p>
                 <div class="hud-header-line"></div>
@@ -620,11 +1474,16 @@
                         </div>
                         <div class="contact-item">
                             <span class="item-label">LOCATION</span>
-                            <span class="item-value">Parañaque City, Metro Manila</span>
+                            <a href="https://www.google.com/maps/place/Para%C3%B1aque,+Metro+Manila/@14.4844453,120.9700073,11809m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397ce5df9175d09:0x2d041bbb0b2842e5!8m2!3d14.4792946!4d121.0198469!16zL20vMDE2dGQx?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="item-value">Parñaque City, Metro Manila</a>
                         </div>
                         <div class="contact-item">
                             <span class="item-label">NETWORK NODES</span>
-                            <span class="item-value">GitHub / LinkedIn</span>
+                            <a href="https://github.com/Rhaast45" target="_blank" rel="noopener noreferrer" class="item-value">GitHub</a>
+                            <a href="https://www.linkedin.com/in/rhaast/" target="_blank" rel="noopener noreferrer" class="item-value">LinkedIn</a>
+                        </div>
+                         <div class="contact-item">
+                            <span class="item-label">CONTACT NUMBER</span>
+                            <span class="item-value">+63 907 489 4940</span>
                         </div>
                     </div>
                 </div>
@@ -666,7 +1525,7 @@
                     <h3 class="exp-role">B.S. in Information Technology</h3>
                     <div class="exp-company">@ Datamex College of Saint Adeline</div>
                     <p class="exp-desc">
-                        Specialized training in programming fundamentals, hardware maintenance, network setup, systems troubleshooting, and modern tech solutions in Parañaque City.
+                        Specialized training in programming fundamentals, hardware maintenance, network setup, systems troubleshooting, and modern tech solutions in Parñaque City.
                     </p>
                     <div class="exp-tags">
                         <span class="tech-tag">Information Technology</span>
@@ -698,7 +1557,7 @@
                                 <!-- Verified Clients Card -->
                 <div class="exp-card">
                     <div class="exp-card-header">
-                        <span class="exp-date">20##</span>
+                        <span class="exp-date">Year 2024 - 2025</span></span>
                         <span class="exp-status-badge">[ VERIFIED_CLIENTS ]</span>
                     </div>
                     <h3 class="exp-role">Client Engagements</h3>
@@ -752,7 +1611,7 @@
                     <h4>[ CONTACT // COMM_LINK ]</h4>
                     <ul>
                         <li><a href="mailto:qwertyrhaast@gmail.com" class="footer-link">qwertyrhaast@gmail.com</a></li>
-                        <li><span class="footer-link">📍 Parañaque City, Metro Manila</span></li>
+                        <li><span class="footer-link">📍 Parñaque City, Metro Manila</span></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -773,9 +1632,6 @@
 
             <div class="footer-bottom">
                 <span class="footer-copy">&copy; 2027 Michael Ortinero. All rights reserved.</span>
-                <span class="footer-credit">
-                    Design based on <a href="https://github.com/francoN753/Arknights-template-portafolio" target="_blank" rel="noopener noreferrer">Arknights Template</a> by francoN753
-                </span>
                 <span class="footer-version">OPERATOR_RHAAST v2.6.0 // TERMINAL_IDLE</span>
             </div>
         </div>
@@ -818,16 +1674,31 @@
                 });
             });
         }
+
+        // Open contact modal directly when clicking nav Contact link
+        const navContact = document.getElementById('nav-contact-link');
+        const contactModal = document.getElementById('contact-modal');
+        if (navContact && contactModal) {
+            navContact.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('is-open');
+            });
+        }
     })();
     </script>
 
     <!-- Scroll & Extended Interactive Behaviors -->
+    <script src="js/checklist.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/about-card-interaccion.js"></script>
     <script src="js/portal-animation.js"></script>
 </body>
 
 </html>
+
+
+
+
 
 
 

@@ -1,55 +1,61 @@
-# Portfolio for Michael Ortinero
+# Michael Ortinero — IT Portfolio
 
-A personal portfolio website built as a modern one-page static site to showcase professional profile, featured projects, and contact information.
+A responsive, single-page portfolio showcasing my IT background, technical skills, projects, troubleshooting knowledge, and career development.
 
-## Overview
+## Live Site
 
-This project presents a dark, minimal portfolio experience with a strong tech aesthetic. It includes:
+[View the portfolio](https://rhaast45.github.io/Port-Santiago)
 
-- A landing page with hero content and navigation
-- A profile section highlighting background and expertise
-- A projects showcase with work samples
-- Responsive styling for desktop and mobile layouts
-- Static assets and custom CSS for a polished design
+## Portfolio Sections
+
+- **Profile and technical skills** — Background, skills inventory, and self-assessed proficiency levels.
+- **Featured projects and certifications** — Selected work, credentials, and resume.
+- **Troubleshooting portfolio** — Scenario-based diagnostic procedures for common hardware, Windows, network, and printer issues.
+- **Cybersecurity case study** — SQL injection risks and defensive practices, including parameterized queries and least privilege.
+- **AI usage log** — Examples of AI-assisted portfolio work, what was checked, and verification limitations.
+- **Employability and interview readiness** — A playable behavioral mock-interview recording, a silent looping technical-interview animation, interview preparation, and a project-defense outline.
+- **Career plan and reflection** — Career goals and academic reflection.
+- **Experience and FAQ** — Professional experience, availability, and contact information.
+
+## Responsive Experience
+
+The interface adapts to desktop and mobile screens. On narrow screens, content grids collapse into a single column, panels and headings reflow, and mobile navigation controls are used. The Projects section also features a scroll-triggered loading and shutter transition.
+
+## Built With
+
+- HTML5 and CSS3
+- Vanilla JavaScript
+- GSAP and ScrollTrigger for animation
+- Lenis for smooth scrolling
+- Three.js for visual effects
+- Google Fonts and a locally bundled display font
 
 ## Project Structure
 
 ```text
-it-portfolioV3/
-├── index.html           # Main landing page
-├── profile.html         # Profile/about page
-├── projects.html        # Projects showcase page
-├── resume.html          # Resume landing page
+.
+├── index.html
+├── profile.html
+├── projects.html
+├── style.css
+├── js/
+│   ├── portal-animation.js
+│   ├── scroll.js
+│   └── vendor/
 ├── assets/
+│   ├── documents/
+│   ├── fonts/
 │   ├── images/
-│   └── documents/
-├── Js/                  # JavaScript files
-├── css/
-    └── style.css        # Designs
-├── README.md            # Project documentation
-└── .vscode/             # Editor settings
+│   └── videos/
+└── README.md
 ```
 
-## Technologies Used
+The portfolio is primarily served from `index.html`. Styles, scripts, fonts, images, documents, and interview media are stored in their respective folders under `assets/` and `js/`.
 
-- HTML5
-- Google Fonts
-- Static web assets
+## Run Locally
 
-## How to Run
-
-Click this link directly or type it in a browser:
-
-[https://rhaast45.github.io/Portugal/]
-
-
-## Notes
-
-- No build step or package installation is required.
-- The design is fully front-end and can be customized by editing the HTML.
-- Assets used in the portfolio are stored in the `assets/` folder.
+No build step or package installation is required. Open `index.html` in a browser, or serve the repository root with a local static web server. Serving over HTTP is recommended for checking media playback and browser features.
 
 ## Author
 
-Endminstrator764 
-FORMULA_FN
+**Michael Ortinero** · GitHub: [@Rhaast45](https://github.com/Rhaast45)
