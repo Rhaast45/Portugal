@@ -1,4 +1,4 @@
-/* style.css ï¿½ Hoja de Estilos Principal (Corregido & Consolidado) */
+﻿/* style.css ï¿½ Hoja de Estilos Principal (Corregido & Consolidado) */
 
 /* ==========================================
    0. IMPORTAR FUENTE LOCAL (ZELDA BOTW)
@@ -39,6 +39,8 @@ html, body {
   background-color: var(--bg-main);
   color: var(--text-light);
   font-family: var(--font-body);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
@@ -124,6 +126,7 @@ html.lenis, html.lenis body {
   font-family: var(--font-logo);
   font-size: 1.8rem;
   font-weight: normal;
+  transform: translateX(150px);
   letter-spacing: 0.14em;
   color: var(--text-light);
   text-align: center;
@@ -495,6 +498,7 @@ html.lenis, html.lenis body {
 }
 
 .hero-title .char {
+  font-size: 0.4em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1417,6 +1421,10 @@ body.no-scroll {
   .nav-logo {
     font-size: 1.25rem;
     z-index: 1001;
+  }
+
+  .navbar a.nav-logo {
+    transform: translateX(10px);
   }
 
   .nav-toggle {
@@ -3083,5 +3091,740 @@ body.no-scroll {
 
   .faq-item p {
     font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   BSIT INDUSTRY-READY PORTFOLIO EXTENSIONS (HUD / TACTICAL AESTHETIC)
+   ========================================================================== */
+
+/* Scoped Bootstrap 5 Table & Grid Resets to protect dark theme */
+.bsit-scope {
+  --bs-body-color: var(--text-light, #F4F5F5);
+  --bs-body-bg: transparent;
+  color: var(--text-light, #F4F5F5);
+}
+
+.bsit-scope table {
+  color: var(--text-light, #F4F5F5);
+}
+
+/* 1. Hero Action Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 20;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  text-decoration: none;
+  pointer-events: auto !important;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-cta-primary {
+  background: var(--accent-yellow, #f5a623);
+  color: #070707 !important;
+  border: 1px solid var(--accent-yellow, #f5a623);
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.55);
+}
+
+.hero-cta-secondary {
+  background: rgba(12, 14, 18, 0.75);
+  color: var(--text-light, #F4F5F5) !important;
+  border: 1px solid rgba(245, 166, 35, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.hero-cta-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-yellow, #f5a623);
+  color: var(--accent-yellow, #f5a623) !important;
+  box-shadow: 0 0 16px rgba(245, 166, 35, 0.3);
+}
+
+/* 2. Professional Statement Card in About Me */
+.professional-statement-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(245, 166, 35, 0.06);
+  border-left: 3px solid var(--accent-yellow, #f5a623);
+  border-top: 1px solid rgba(245, 166, 35, 0.2);
+  border-right: 1px solid rgba(245, 166, 35, 0.15);
+  border-bottom: 1px solid rgba(245, 166, 35, 0.15);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.92rem;
+  color: var(--text-light, #F4F5F5);
+  line-height: 1.6;
+}
+
+.professional-statement-box strong {
+  color: var(--accent-yellow, #f5a623);
+  font-family: var(--font-heading, sans-serif);
+  letter-spacing: 0.5px;
+}
+
+/* 3. Tactical Cards & Panels */
+.hud-panel {
+  position: relative;
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hud-panel:hover {
+  border-color: rgba(245, 166, 35, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hud-panel-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-light, #F4F5F5);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hud-panel-title .hud-panel-badge {
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-yellow, #f5a623);
+  padding: 0.2rem 0.5rem;
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+/* 4. Tactical Data Tables */
+.hud-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 10, 14, 0.7);
+}
+
+.hud-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+}
+
+.hud-table th {
+  background: rgba(245, 166, 35, 0.12);
+  color: var(--accent-yellow, #f5a623);
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid rgba(245, 166, 35, 0.3);
+  text-align: left;
+}
+
+.hud-table td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-light, #F4F5F5);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.hud-table tbody tr:hover {
+  background: rgba(245, 166, 35, 0.04);
+}
+
+.hud-table td strong {
+  color: #fff;
+  font-family: var(--font-heading, sans-serif);
+}
+
+.table-tag {
+  display: inline-block;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-muted, #A0AAA9);
+}
+
+.table-tag-accent {
+  background: rgba(245, 166, 35, 0.15);
+  border-color: rgba(245, 166, 35, 0.4);
+  color: var(--accent-yellow, #f5a623);
+}
+
+/* 5. Editable Callout Markers */
+.edit-me-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px dashed rgba(255, 152, 0, 0.6);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+/* 6. Diagnostic Cards (<details> accordions) */
+.hud-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.hud-case-card {
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--accent-yellow, #f5a623);
+  padding: 1.4rem 1.8rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.hud-case-card[open] {
+  background: rgba(16, 19, 26, 0.92);
+  border-color: rgba(245, 166, 35, 0.45);
+}
+
+.hud-case-card summary {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light, #F4F5F5);
+  letter-spacing: 0.8px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hud-case-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.hud-case-card summary::after {
+  content: "+";
+  font-family: var(--font-heading, sans-serif);
+  color: var(--accent-yellow, #f5a623);
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+
+.hud-case-card[open] summary::after {
+  content: "—";
+  transform: rotate(180deg);
+}
+
+.hud-case-content {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: var(--text-muted, #A0AAA9);
+  line-height: 1.6;
+}
+
+.hud-case-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hud-case-field-label {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-yellow, #f5a623);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hud-case-field-val {
+  color: var(--text-light, #F4F5F5);
+}
+
+.hud-case-field-val ul,
+.hud-case-field-val ol {
+  padding-left: 1.4rem;
+  margin: 0.4rem 0;
+}
+
+.hud-case-field-val li {
+  margin-bottom: 0.3rem;
+}
+
+/* 7. Code Comparison Grid (Cybersecurity) */
+.code-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.code-box {
+  background: #050608;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.25rem;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  overflow-x: auto;
+}
+
+.code-box-vulnerable {
+  border-top: 3px solid #ff4d4f;
+}
+
+.code-box-secure {
+  border-top: 3px solid #52c41a;
+}
+
+.code-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.code-box-vulnerable .code-box-header {
+  color: #ff4d4f;
+}
+
+.code-box-secure .code-box-header {
+  color: #52c41a;
+}
+
+.code-box pre {
+  margin: 0;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #e6edf3;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-box .code-comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.code-box .code-highlight-vuln {
+  color: #ff7875;
+  background: rgba(255, 77, 79, 0.1);
+  padding: 0.1rem 0.3rem;
+}
+
+.code-box .code-highlight-sec {
+  color: #95de64;
+  background: rgba(82, 196, 26, 0.1);
+  padding: 0.1rem 0.3rem;
+}
+
+/* 8. AI Literacy Answer Cards */
+.ai-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ai-answer-card {
+  background: rgba(12, 14, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid var(--accent-yellow, #f5a623);
+  padding: 1.5rem;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-answer-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light, #F4F5F5);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.ai-answer-body {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  color: var(--text-muted, #A0AAA9);
+  line-height: 1.6;
+}
+
+/* 9. Employability Cards & Status Badges */
+.employability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.employability-card {
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.75rem;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mock-interview-video {
+  display: block;
+  width: 100%;
+  max-height: 32rem;
+  margin: 0.25rem 0 1rem;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  object-fit: contain;
+}
+
+.interview-loop-video {
+  display: block;
+  width: 100%;
+  max-height: 18rem;
+  margin: 0.25rem 0 1rem;
+  object-fit: contain;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+}
+
+.status-badge-scheduled {
+  background: rgba(245, 166, 35, 0.15);
+  border: 1px solid rgba(245, 166, 35, 0.5);
+  color: var(--accent-yellow, #f5a623);
+}
+
+.status-badge-completed {
+  background: rgba(82, 196, 26, 0.15);
+  border: 1px solid rgba(82, 196, 26, 0.5);
+  color: #52c41a;
+}
+
+.defense-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.defense-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid var(--accent-yellow, #f5a623);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.82rem;
+  color: var(--text-light, #F4F5F5);
+}
+
+.defense-step .timing {
+  font-family: var(--font-heading, monospace);
+  font-size: 0.7rem;
+  color: var(--accent-yellow, #f5a623);
+  font-weight: 700;
+}
+
+/* 10. Career Plan Timeline Grid */
+.career-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.career-goal-card {
+  background: rgba(12, 14, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  border-left: 3px solid var(--accent-yellow, #f5a623);
+}
+
+.career-goal-milestone {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-yellow, #f5a623);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.career-goal-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.career-goal-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  color: var(--text-muted, #A0AAA9);
+  line-height: 1.55;
+}
+
+/* 11. Reflection Paper Article */
+.reflection-article {
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-light, #F4F5F5);
+}
+
+.reflection-article h3 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.15rem;
+  color: var(--accent-yellow, #f5a623);
+  margin-top: 1.8rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.reflection-article p {
+  margin-bottom: 1.25rem;
+  color: #d1d5db;
+}
+
+.reflection-word-count {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-yellow, #f5a623);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+/* 12. GitHub Repository Evidence Banner */
+.evidence-banner {
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 3px solid var(--accent-yellow, #f5a623);
+  padding: 2.2rem;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.evidence-content {
+  max-width: 720px;
+}
+
+.evidence-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.evidence-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  color: var(--text-muted, #A0AAA9);
+  line-height: 1.6;
+}
+
+.evidence-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 13. Offline Archive Checklist in Footer */
+.footer-archive-box {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px dashed rgba(245, 166, 35, 0.35);
+  font-family: var(--font-heading, monospace);
+  font-size: 0.75rem;
+  color: var(--text-muted, #A0AAA9);
+}
+
+.footer-archive-title {
+  color: var(--accent-yellow, #f5a623);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.footer-archive-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-archive-item {
+  color: var(--text-light, #F4F5F5);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-archive-item::before {
+  content: "📁";
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .hud-section-container,
+  .hud-panel,
+  .hud-panel-title,
+  .hud-panel-title > span {
+    min-width: 0;
+  }
+
+  .hud-panel {
+    padding: clamp(0.85rem, 4vw, 1.25rem);
+  }
+
+  .hud-panel-title {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: clamp(0.95rem, 4.2vw, 1.15rem);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .hud-panel-title .hud-panel-badge {
+    max-width: 100%;
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+  }
+
+  .section-header-hud .section-title {
+    font-size: clamp(1.4rem, 7.4vw, 2.35rem);
+  }
+
+  .card-main-title {
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .certs-grid,
+  .employability-grid,
+  .code-compare-grid,
+  .ai-answer-grid,
+  .career-goals-grid,
+  .footer-grid,
+  .tech-spec-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skill-tactical-card,
+  .cert-tactical-card,
+  .employability-card,
+  .code-box {
+    min-width: 0;
+  }
+
+  .code-box-header {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    overflow-wrap: anywhere;
+  }
+
+  .hud-case-card {
+    padding: 1rem;
+  }
+
+  .hud-case-card summary {
+    min-width: 0;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .hud-case-card summary::after {
+    flex: 0 0 auto;
   }
 }
