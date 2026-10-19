@@ -1,4 +1,4 @@
-function initTacticalParallax() {
+﻿function initTacticalParallax() {
   // Captura de las capas en base al HTML
   const bgLayer = document.querySelector('.tactical-bg');        // Fondo (Grid / Vectores HUD)
   const midLayer = document.querySelector('.marquee-bg');        // Midground (Texto "CREATIVE CODER")

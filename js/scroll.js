@@ -1,7 +1,7 @@
-﻿// Inicialización de Lenis Smooth Scroll + Sincronización GSAP
+// Inicialización de Lenis Smooth Scroll + Sincronización GSAP
 const lenis = new Lenis({
-  duration: 2.2,          // Mayor duración = scroll más pesado, lento y cinematográfico
-  wheelMultiplier: 0.75,  // Menor distancia por rueda = más precisión para apreciar las animaciones
+  duration: 1.8,
+  wheelMultiplier: 0.85,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
 });
@@ -21,12 +21,35 @@ if (typeof ScrollTrigger !== 'undefined') {
   requestAnimationFrame(raf);
 }
 
-// Lógica del botón REBOOT_SYSTEM (Ir Arriba)
+// Navegación suave para enlaces ancla (#hero, #sobre-mi, #proyectos, etc.)
 document.addEventListener('DOMContentLoaded', () => {
+  // Manejo de todos los enlaces internos (#)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#' || targetId === '#contact-modal') return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        if (typeof lenis !== 'undefined') {
+          lenis.scrollTo(targetEl, {
+            offset: 0,
+            duration: 1.6,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Lógica del botón REBOOT_SYSTEM (Ir Arriba)
   const btnReboot = document.getElementById('btn-reboot');
   if (btnReboot) {
-    btnReboot.addEventListener('click', () => {
-      // Usar lenis para un scroll suave, o fallback a window.scrollTo si falla
+    btnReboot.addEventListener('click', (e) => {
+      e.preventDefault();
       if (typeof lenis !== 'undefined') {
         lenis.scrollTo(0, { duration: 1.5 });
       } else {

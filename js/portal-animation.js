@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
         console.error("GSAP o ScrollTrigger no están cargados correctamente.");
         return;
@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const shutterBottom = document.querySelector(".shutter-bottom");
     const shutterLoader = document.querySelector(".shutter-loader");
     const loaderBar = document.querySelector(".loader-bar-fill");
-    const projectsSection = document.querySelector("#projects");
-    const projectCards = document.querySelectorAll("#projects .project-card");
-    const sectionHeader = document.querySelector("#projects .section-header-hud");
+    const projectsSection = document.querySelector("#projects") || document.querySelector("#proyectos");
+    const projectCards = document.querySelectorAll("#projects .project-card, #proyectos .project-card");
+    const sectionHeader = document.querySelector("#projects .section-header-hud, #proyectos .section-header-hud");
 
     if (!projectsSection || !shutterTop || !shutterBottom) return;
 
     // Timeline cinemática de persianas tácticas (Cierre anticipado al aproximarse)
     const shutterTl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#projects",
+            trigger: document.getElementById("projects") ? "#projects" : "#proyectos",
             start: "top 85%",      // Cierre inmediato en cuanto la sección asoma por abajo (evita vacíos)
             end: "top 15%",        // Finaliza el ciclo de apertura antes de llegar al centro
             scrub: 0.6,            // Scrub muy fluido y receptivo con Lenis
@@ -41,30 +41,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Muestra la ventana de carga HUD (0.3 ? 0.5)
         .to(shutterLoader, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(1.2)" }, 0.3)
 
-        // 3. Llenado de la barra de carga (0.5 ? 1.2)
-        .to(loaderBar, { width: "100%", duration: 0.7, ease: "power1.inOut" }, 0.5)
+        // 3. Llenado de la barra de carga (0.5 ? 2.0)
+        .to(loaderBar, { width: "100%", duration: 1.5, ease: "power1.inOut" }, 0.5)
 
-        // 4. Confirmación de carga y resplandor (1.2 ? 1.4)
-        .to(shutterLoader, { scale: 1.04, boxShadow: "0 0 35px rgba(245, 166, 35, 0.5)", duration: 0.2 }, 1.2)
+        // 4. Confirmación de carga y resplandor (2.0 ? 2.3)
+        .to(shutterLoader, { scale: 1.04, boxShadow: "0 0 35px rgba(245, 166, 35, 0.5)", duration: 0.3 }, 2.0)
 
-        // 5. Ocultar el loader (1.4 ? 1.6)
-        .to(shutterLoader, { opacity: 0, scale: 0.85, duration: 0.2 }, 1.4)
+        // 5. Ocultar el loader (2.3 ? 2.55)
+        .to(shutterLoader, { opacity: 0, scale: 0.85, duration: 0.25 }, 2.3)
 
-        // 6. Apertura de persianas para revelar Proyectos (1.6 ? 2.0)
-        .to(shutterTop, { y: "-100%", ease: "power3.inOut", duration: 0.4 }, 1.6)
-        .to(shutterBottom, { y: "100%", ease: "power3.inOut", duration: 0.4 }, 1.6)
+        // 6. Apertura de persianas para revelar Proyectos (2.55 ? 3.1)
+        .to(shutterTop, { y: "-100%", ease: "power3.inOut", duration: 0.55 }, 2.55)
+        .to(shutterBottom, { y: "100%", ease: "power3.inOut", duration: 0.55 }, 2.55)
 
-        // 7. Despliegue en cascada de la cabecera y tarjetas de Proyectos (1.8 ? 2.4)
+        // 7. Despliegue en cascada de la cabecera y tarjetas de Proyectos (2.8 ? 3.8)
         .fromTo(sectionHeader, 
             { opacity: 0, y: 35, filter: "blur(8px)" }, 
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power2.out" }, 
-            1.8
+            { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" },
+            2.8
         )
         .fromTo(projectCards, 
             { opacity: 0, y: 40, scale: 0.92, filter: "blur(6px)" }, 
-            { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", stagger: 0.15, duration: 0.4, ease: "power3.out" }, 
-            2.0
+            { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", stagger: 0.15, duration: 0.5, ease: "power3.out" },
+            3.0
         );
 });
-
 
